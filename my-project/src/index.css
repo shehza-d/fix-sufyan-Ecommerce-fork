@@ -1,3 +1,17 @@
+@font-face {
+    font-family: myfont;
+    src: url(Poppins/Poppins-Medium.ttf);
+}
+*{
+    font-family: myfont;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
