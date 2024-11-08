@@ -1,6 +1,7 @@
 import game from "../assets/images/game.png";
 import star from "../assets/images/Five star.png";
 
+
 export function AddToCard({
   discount,
   productName,
@@ -10,6 +11,7 @@ export function AddToCard({
 }) {
   return (
     <>
+
       <div className="main  bg-white  w-[270px] h-[350px] m-8 ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] relative center ">
           <button
@@ -31,6 +33,7 @@ export function AddToCard({
           </div>
         </div>
       </div>
+
     </>
   );
 }
