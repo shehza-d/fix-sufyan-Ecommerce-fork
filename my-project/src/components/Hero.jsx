@@ -13,14 +13,14 @@ let heroLink = [
 export default function Hero() {
   return (
     <>
-      <div className="heroMain flex">
+      <div className="heroMain center">
         <div className="lefthero   gap-4  border-r-2 border-gray-100 w-[310px]">
           <div className="liHero   pl-12 ml-9 w-[270px] h-[344px]  gap-4   ">
            <div className="  liPadding w-[217px] h-[340px]   mt-12"> 
             {heroLink.map((value, index) => {
               return (
                 <li className=" list-none pl-3 w-[217px] h-[24px] gap-[81px] mb-[15px] font-normal text-base " id={index}>
-                  {value.name}
+               <a href="#" className="hover:underline">{value.name}</a>   
                 </li>
               );
             })}

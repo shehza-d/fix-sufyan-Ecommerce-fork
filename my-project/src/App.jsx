@@ -15,7 +15,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>     
+    <> 
+    <div className="w-[100%] 2xl:bg-slate-400 2xl:center ">    
                                 {/* Header Start */}
 <Header/>
                                  {/* Header End */}
@@ -25,12 +26,12 @@ function App() {
                                 {/* Navbar End */}
 
                                 {/* Hero Start */}
-                                <Hero/>
+                                {/* <Hero/> */}
                                 {/* Hero End */}
 
 
                           {/* AddToCard Work Start */}
-
+{/* 
     <div className="card flex ">
     {
       AddToCardlist.map((value ,index)=>{
@@ -40,9 +41,9 @@ function App() {
         )
       })
     }
-    </div>
+    </div> */}
                                     {/* AddToCard Work End */}
-
+                                    </div>
     </>
   );
 }
