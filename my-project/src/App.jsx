@@ -26,7 +26,7 @@ function App() {
                                 {/* Navbar End */}
 
                                 {/* Hero Start */}
-                                {/* <Hero/> */}
+                                <Hero/>
                                 {/* Hero End */}
 
 

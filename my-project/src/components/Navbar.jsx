@@ -7,6 +7,8 @@ import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
+import mypic from '/src/assets/profilepic/myphoto.jpg'; 
+
 // ../assets/logo/'
 let Mylink = [
   { name: "Home" },
@@ -14,7 +16,7 @@ let Mylink = [
   { name: "About" },
   // { name: "Login" },
 ];
-let logSing = false;
+let logSing = true;
 export default function MyNavbar() {
   const [menu, setMenu] = useState(false);
   return (
@@ -34,18 +36,20 @@ export default function MyNavbar() {
           />
         </div>
         {/* searchbar */}
-        <div className=" bg-fuchsia-500 center w-[370px]  h-[38px] gap-6">
-          <div className=" sm:w-[400px]  w-[243px] h-[38px] flex gap-2 center bg-[#F5F5F5]">
+        <div className="  mobile:w-[200px] md:w-[250px] center lg:w-[250px]  h-[38px] gap-6">
+          <div className="  sm:w-[400px]  w-[243px] h-[38px] flex gap-2 center bg-[#F5F5F5]">
             <div className="search   h-6 flex justify-center ">
               <input
                 className="outline-none  w-[100%] bg-[#F5F5F5] placeholder:font-normal md:text-base text-xs text-gray-300"
                 placeholder="What are looking for"
                 type="search"
                 name=""
-                id=""
+                id=" searchinp"
               />
-              <div>
+              <div><button onClick={(event)=>{console.log(document.getElementsByClassName('search'));
+              }}>
                 <CiSearch className="text-2xl cursor-pointer font-semibold" />
+                </button>
               </div>
             </div>
           </div>
@@ -58,35 +62,37 @@ export default function MyNavbar() {
               return (
                 <li
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
-                  id={index}
+                  key={index}
                 >
                   {value.name}
                 </li>
               );
             })}
+
             {logSing === true ? (
-              <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                Login
-              </li>
-            ) : (null)}
-             {logSing === false ? (
-              
-          
-              <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                SignUp
-              </li>
-            ) : (null)}
-             {logSing === false ? (<ul className="flex gap-3">
-              <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-             <CiHeart />
-            </li>
-              <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-              <MdOutlineShoppingCart />
-            </li>   
-            <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-            <FaUserCircle />
-            </li></ul>
-            ) : (null)}
+              <>
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                  SignUp
+                </li>
+                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <CiHeart />
+                </li>
+                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <MdOutlineShoppingCart />
+                </li>
+               
+                <li  className="w-[30px] h-[35px] rounded-full overflow-hidden"><img  src={mypic} alt="" /></li>
+              </>
+            ) : (
+              <>
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                  Login
+                </li>
+                 <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <FaUserCircle />
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="menu center sm:flex md:flex mobile:flex lg:hidden xl:hidden 2xl:hidden">
