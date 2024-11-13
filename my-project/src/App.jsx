@@ -4,6 +4,11 @@ import { AddToCard } from "./components/AddToCard";
 import Header from "./components/Header";
 import MyNavbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import MyFooter from "./components/Footer";
+
+
+
+
 let AddToCardlist = [
   { discount: "-40%", productName: "HAVIT HV-G92 Gamepad", delPrice: "$160",newPrice:"$120",starRank:"(88)" },
   { discount: "-35%", productName: "AK-900 Wired Keyboard", delPrice: "$400",newPrice:"$370",starRank:"(99)" },
@@ -31,8 +36,9 @@ function App() {
 
 
                           {/* AddToCard Work Start */}
-{/* 
-    <div className="card flex ">
+                          <MyFooter/>
+
+    {/* <div className="card flex ">
     {
       AddToCardlist.map((value ,index)=>{
         return(

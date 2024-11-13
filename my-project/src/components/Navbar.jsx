@@ -7,7 +7,7 @@ import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
-import mypic from '/src/assets/profilepic/myphoto.jpg'; 
+import mypic from "/src/assets/profilepic/myphoto.jpg";
 
 // ../assets/logo/'
 let Mylink = [
@@ -21,7 +21,7 @@ export default function MyNavbar() {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <nav className=" center   justify-around p-6  border-b-2 border-gray-100 ">
+      <nav className=" center   justify-around p-6  border-b-2 border-gray-100 relative">
         {/* logo */}
         <div className="imglogo center ">
           <img
@@ -46,9 +46,13 @@ export default function MyNavbar() {
                 name=""
                 id=" searchinp"
               />
-              <div><button onClick={(event)=>{console.log(document.getElementsByClassName('search'));
-              }}>
-                <CiSearch className="text-2xl cursor-pointer font-semibold" />
+              <div>
+                <button
+                  onClick={(event) => {
+                    console.log(document.getElementsByClassName("search"));
+                  }}
+                >
+                  <CiSearch className="text-2xl cursor-pointer font-semibold" />
                 </button>
               </div>
             </div>
@@ -69,42 +73,93 @@ export default function MyNavbar() {
               );
             })}
 
-            {logSing === true ? (
+           
+          </ul>
+        </div>
+        <div className="flex justify-center items-center list-none gap-1 mobile:text-xs sm:text-xs"> {logSing === true ? (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
                   SignUp
                 </li>
-                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-smhover:cursor-pointer">
                   <CiHeart />
                 </li>
-                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
                   <MdOutlineShoppingCart />
                 </li>
-               
-                <li  className="w-[30px] h-[35px] rounded-full overflow-hidden"><img  src={mypic} alt="" /></li>
+
+                <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
+                  <img src={mypic} alt="" />
+                </li>
               </>
             ) : (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
                   Login
                 </li>
-                 <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <FaUserCircle />
                 </li>
               </>
+            )}</div>
+
+
+        {/* sm screen */}
+ 
+       {menu? <div className="link top-[70px] bg-white w-[100%]  lg:flex xl:flex 2xl:flex absolute">
+          <ul className="flex pl-8 flex-col gap-5">
+            {Mylink.map((value, index) => {
+              return (
+                <li
+                  className="hover:underline hover:text-myTheme hover:cursor-pointer"
+                  key={index}
+                >
+                  {value.name}
+                </li>
+              );
+            })}
+
+            {logSing === true ? (
+              <>
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                  SignUp
+                </li>
+                {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <CiHeart />
+                </li>
+                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <MdOutlineShoppingCart />
+                </li> */}
+
+                {/* <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
+                  <img src={mypic} alt="" />
+                </li> */}
+              </>
+            ) : (
+              <>
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                  Login
+                </li>
+                {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                  <FaUserCircle />
+                </li> */}
+              </>
             )}
           </ul>
-        </div>
+        </div>:null
+}
+
         <div className="menu center sm:flex md:flex mobile:flex lg:hidden xl:hidden 2xl:hidden">
-          {/* <button onClick={()=>{setMenu()}}><IoMdClose /></button> */}
           <button
             onClick={() => {
-              setMenu();
+              setMenu(!menu);
             }}
           >
-            <MdOutlineMenu />
+            
+            {menu ? <IoMdClose /> : <MdOutlineMenu />}
           </button>
         </div>
+      
       </nav>
     </>
   );

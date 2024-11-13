@@ -10,7 +10,9 @@ export default {
       "myTheme":"#DB4444"
      },
      screens:{
-      "mobile":"310px"
+      "mobile":"310px",
+      
+
      }
     },
   },
