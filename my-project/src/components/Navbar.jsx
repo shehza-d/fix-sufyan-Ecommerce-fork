@@ -8,12 +8,13 @@ import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import mypic from "/src/assets/profilepic/myphoto.jpg";
+import { Link } from "react-router-dom";
 
 // ../assets/logo/'
 let Mylink = [
-  { name: "Home" },
-  { name: "Contact" },
-  { name: "About" },
+  { name: "Home", path:"/" },
+  { name: "Contact", path:"/Contact" },
+  { name: "About", path:"/About" },
   // { name: "Login" },
 ];
 let logSing = true;
@@ -68,7 +69,7 @@ export default function MyNavbar() {
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
                   key={index}
                 >
-                  {value.name}
+                 <Link to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
@@ -79,7 +80,7 @@ export default function MyNavbar() {
         <div className="flex justify-center items-center list-none gap-1 mobile:text-xs sm:text-xs"> {logSing === true ? (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                  SignUp
+                   <Link to={"/SiginUp"}>SignUp</Link>
                 </li>
                 <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-smhover:cursor-pointer">
                   <CiHeart />
@@ -94,10 +95,10 @@ export default function MyNavbar() {
               </>
             ) : (
               <>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                  Login
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
+                    <Link to={"/Login"}>Login</Link>
                 </li>
-                <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                <li className="text-myTheme text-2xl hover:cursor-pointer">
                   <FaUserCircle />
                 </li>
               </>
@@ -114,7 +115,7 @@ export default function MyNavbar() {
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
                   key={index}
                 >
-                  {value.name}
+                   <Link to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
@@ -122,7 +123,7 @@ export default function MyNavbar() {
             {logSing === true ? (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                  SignUp
+                <Link to={"/SiginUp"}>SignUp</Link>
                 </li>
                 {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <CiHeart />
@@ -138,7 +139,7 @@ export default function MyNavbar() {
             ) : (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                  Login
+                   <Link to={"/Login"}>Login</Link>
                 </li>
                 {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <FaUserCircle />
