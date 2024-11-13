@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/Hero'
+import FlashTimer from '../components/FlashTimer'
 
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
     <div>Home
         
         <Hero/>
-
+<FlashTimer/>
          </div>
   )
 }
