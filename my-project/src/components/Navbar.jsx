@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaLeaf, FaUserCircle } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import mypic from "/src/assets/profilepic/myphoto.jpg";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ let Mylink = [
   { name: "About", path:"/About" },
   // { name: "Login" },
 ];
-let logSing = true;
+let logSing = false;
 export default function MyNavbar() {
   const [menu, setMenu] = useState(false);
   return (
@@ -73,15 +73,21 @@ export default function MyNavbar() {
                 </li>
               );
             })}
-
+             
+{logSing?null:  <>
+  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                   <Link to={"/SiginUp"}>SignUp</Link>
+                </li>
+ <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
+                    <Link to={"/Login"}>Login</Link>
+                </li></>
+                }
            
           </ul>
         </div>
         <div className="flex justify-center items-center list-none gap-1 mobile:text-xs sm:text-xs"> {logSing === true ? (
               <>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                   <Link to={"/SiginUp"}>SignUp</Link>
-                </li>
+               
                 <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-smhover:cursor-pointer">
                   <CiHeart />
                 </li>
@@ -89,17 +95,15 @@ export default function MyNavbar() {
                   <MdOutlineShoppingCart />
                 </li>
 
-                <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
-                  <img src={mypic} alt="" />
+                <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
+              <Link to="/profile"><img src={mypic} alt="" /></Link>    
                 </li>
               </>
             ) : (
               <>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
-                    <Link to={"/Login"}>Login</Link>
-                </li>
+            
                 <li className="text-myTheme text-2xl hover:cursor-pointer">
-                  <FaUserCircle />
+                   <Link to={"/profile"}><FaUserCircle /></Link>
                 </li>
               </>
             )}</div>

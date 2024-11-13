@@ -11,6 +11,9 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import SiginUp from "./Pages/SiginUp";
+import Profile from "./Pages/Profile";
+import { Navigate } from "react-router-dom";
+
 
 let AddToCardlist = [
   {
@@ -45,7 +48,7 @@ let AddToCardlist = [
 
 function App() {
   const [count, setCount] = useState(0);
-
+let logSing=false
   return (
     <>
       <div className="w-[100%]  2xl:center ">
@@ -57,8 +60,19 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/About" element={<About/>}/>
           <Route path="/Contact" element={<Contact/>}/>
-          <Route path="/Login" element={<Login/>}/>
-          <Route path="/SiginUp" element={<SiginUp/>}/>
+          
+          <Route path="/SiginUp"  element={<SiginUp/>}/>
+          {logSing?
+        <>
+           <Route path="/profile" element={<Profile/>}/>
+            <Route path="/Login"  element={<Navigate to='/'/>}/>
+            </> 
+           :<>
+           <Route path="/Login"  element={<Login/>}/>
+           <Route path="*"  element={<Navigate to='/Login'/>}/>
+           </>
+        }
+       
 
         </Routes>
         <MyFooter />
