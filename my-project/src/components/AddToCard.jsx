@@ -8,6 +8,7 @@ export function AddToCard({
   delPrice,
   newPrice,
   starRank,
+  image,
 }) {
   return (
     <>
@@ -20,10 +21,10 @@ export function AddToCard({
           >
             {discount}
           </button>
-          <img className=" w-[172px] h-[152px] m-10 hover:scale-125" src={game} alt="" />
+          <img className=" w-[172px] h-[152px] m-10 hover:scale-125" src={image} alt="" />
         </div>
         <div className="myp w-[201px] h-[84px] gap-2 my-3">
-          <h2 className="w-[201] h-6 text-base font-medium hover:text-myTheme">{productName}</h2>
+          <h2 className="w-[201]  text-sm font-medium hover:text-myTheme">{productName}</h2>
           <p className="flex gap-4 my-2 w-[100px] h-6  text-base font-medium text-myTheme">
             <ins className="no-underline"> {newPrice}</ins> {"  "}
             <s className="text-slate-400 "> {delPrice}</s>

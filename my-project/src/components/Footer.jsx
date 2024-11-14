@@ -10,8 +10,8 @@ export default function MyFooter(second) {
     return(
         <>
         
-        <footer className=" body-font bg-black text-white ">
-  <div className="container px-5 py-24 mx-auto bg-black ">
+        <footer className=" body-font bg-black text-white  m-0">
+  <div className="container px-5 py-24 mx-auto bg-black  mb-0">
     <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 justify-center  gap-5 ">
       <div className="lg:w-1/6 md:w-1/2 w-full px-4">
         <h2 className="title-font font-bold text-white tracking-widest text-2xl mb-4">
@@ -54,7 +54,7 @@ export default function MyFooter(second) {
             exclusive@gmail.com
           </li>
           <li className="text-gray-300 hover:text-myTheme ">
-          +88015-88888-9999
+          +92015-888-9999
           </li>
           {/* <li>
             <a className="text-white hover:text-myTheme">Fourth Link</a>
@@ -303,7 +303,7 @@ export default function MyFooter(second) {
           @knyttneve
         </a>
       </p> */}
-      <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-1 sm:text-left text-center p-2 text-gray-500 text-sm">
+      <span className="sm:ml-auto sm:mt-0  mb-7 sm:w-auto w-1 sm:text-left text-center  text-gray-500 text-sm">
       Copyright Rimel 2022. All right reserved
       </span>
     </div>
