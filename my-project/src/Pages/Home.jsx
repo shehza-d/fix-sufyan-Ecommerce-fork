@@ -10,6 +10,7 @@ import computer from "../assets/category/computer.png"
 import camera from "../assets/category/camera.png"
 import boxgame from "../assets/category/boxgame.png"
 import smartWatch from "../assets/category/smartWatch.png"
+import Spiker from "../components/Spiker";
 
 function Home() {
   return (
@@ -36,6 +37,7 @@ function Home() {
       <MyCountBox  name='Best Selling Products' days='This Month'/>
         <CardListSlider />
       </div>
+      <Spiker/>
     </div>
   );
 }

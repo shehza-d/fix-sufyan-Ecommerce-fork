@@ -6,9 +6,8 @@
     font-family: myfont;
 }
 .center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex justify-center items-center
+ 
 }
 
 
