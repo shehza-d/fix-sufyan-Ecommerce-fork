@@ -161,7 +161,7 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
     >
 
-      <div className="flex">
+      <div className="flex ">
 
 
         {

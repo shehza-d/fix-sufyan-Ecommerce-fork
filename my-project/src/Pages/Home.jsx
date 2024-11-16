@@ -11,11 +11,12 @@ import camera from "../assets/category/camera.png"
 import boxgame from "../assets/category/boxgame.png"
 import smartWatch from "../assets/category/smartWatch.png"
 import Spiker from "../components/Spiker";
+import Arrivel from "../components/Arrivel";
 
 function Home() {
   return (
-    <div>
-      Home
+    <div className=" flex flex-col justify-center ">
+      
       <Hero />
       <div className=" flex justify-start flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16  ">
         <FlashTimer />
@@ -38,6 +39,7 @@ function Home() {
         <CardListSlider />
       </div>
       <Spiker/>
+      <Arrivel/>
     </div>
   );
 }

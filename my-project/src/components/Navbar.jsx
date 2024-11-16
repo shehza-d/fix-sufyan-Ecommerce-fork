@@ -69,7 +69,7 @@ export default function MyNavbar() {
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
                   key={index}
                 >
-                 <Link to={value.path}> {value.name}</Link>
+                 <Link  to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
@@ -119,7 +119,7 @@ export default function MyNavbar() {
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
                   key={index}
                 >
-                   <Link to={value.path}> {value.name}</Link>
+                   <Link onClick={()=>{setMenu(false)}} to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
