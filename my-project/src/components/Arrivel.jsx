@@ -140,7 +140,7 @@ function Arrivel() {
       <div className="flex justify-center items-center bg-orange-400 my-10">
         <div className="w-full max-w-[1170px] h-auto lg:h-[600px] flex flex-col lg:flex-row  gap-4 lg:gap-[30px] p-4">
           <div
-            className="flex items-end p-7 w-full lg:w-[50%] bg-black"
+            className="flex items-end p-7 w-full lg:w-[50%]  bg-black"
             style={{
               backgroundImage: `url(${ps5})`,
               backgroundRepeat: "no-repeat",
@@ -148,7 +148,7 @@ function Arrivel() {
               backgroundSize: "cover"
             }}
           >
-            <div className="text-white flex flex-col 2xl:gap-[16px] xl:gap-[16px] lg:gap[16px] md:gap-3 sm:gap-1 mobile:gap-1 bg-black bg-opacity-50 p-4">
+            <div className="text-white flex flex-col 2xl:gap-[16px] xl:gap-[16px] lg:gap[16px] md:gap-3 sm:gap-1 mobile:gap-1 p-4">
               <div>
                 <h2 className="font-semibold 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-xs">PlayStation 5</h2>
               </div>
@@ -188,7 +188,7 @@ function Arrivel() {
               </div>
             </div>
             <div className="w-full lg:w-[570px] h-auto lg:h-[600px] flex flex-col lg:flex-row gap-4 lg:gap-7">
-              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-center p-4 rounded"
+              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 rounded"
                 style={{
                   backgroundImage: `url(${amazone})`,
                   backgroundRepeat: "no-repeat",
@@ -196,7 +196,7 @@ function Arrivel() {
                   backgroundSize: "cover"
                 }}
               >
-                <div className="text-white flex flex-col items-center lg:items-end text-center lg:text-left">
+                <div className="text-white flex flex-col  ">
                   <div>
                     <h2 className="font-semibold text-[20px] leading-6">Speakers</h2>
                   </div>
@@ -212,7 +212,7 @@ function Arrivel() {
                   </div>
                 </div>
               </div>
-              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-center p-4 py-8 rounded"
+              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 py-8 rounded"
                 style={{
                   backgroundImage: `url(${guchi})`,
                   backgroundRepeat: "no-repeat",
@@ -220,7 +220,7 @@ function Arrivel() {
                   backgroundSize: "cover"
                 }}
               >
-                <div className="text-white flex flex-col items-center lg:items-end text-center lg:text-left">
+                <div className="text-white flex flex-col ">
                   <div>
                     <h2 className="font-semibold text-[20px] leading-6">Perfume</h2>
                   </div>
