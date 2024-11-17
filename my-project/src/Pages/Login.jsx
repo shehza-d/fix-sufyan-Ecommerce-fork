@@ -2,7 +2,7 @@ import React from "react";
 
 function Login() {
   return (
-    <div className="font-semibold text-lg bg-slate-500  flex flex-col items-center gap-2 justify-center">
+    <div className="font-semibold text-lg   flex flex-col items-center gap-2 justify-center">
       Login
       <form action="">
         <ul  className="font-normal text-xs flex flex-col gap-4 items-center">
