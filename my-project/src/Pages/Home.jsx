@@ -12,11 +12,12 @@ import boxgame from "../assets/category/boxgame.png"
 import smartWatch from "../assets/category/smartWatch.png"
 import Spiker from "../components/Spiker";
 import Arrivel from "../components/Arrivel";
+import OurProduct from "../components/OurProduct";
 
 function Home() {
   return (
     <div className=" flex flex-col justify-center ">
-      
+                            {/* Hero */}
       <Hero />
       <div className=" flex justify-start flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16  ">
         <FlashTimer />
@@ -24,7 +25,7 @@ function Home() {
       </div>
       <div className=" flex justify-start  flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0  ">
       <MyCountBox  name='Browse By Category' days='This Month'/>
-        {/* <CardListSlider /> */}
+                         {/* <Mini Boxes /> */}
         <div className="flex justify-center gap-5 my-10 border-b-gray-100">
           <div className="2xl:w-40 xl:w-40 md:w-28 sm:w-20 mobile:w-16 cursor-none"><img src={phone} alt="" /></div>
           <div className="2xl:w-40 xl:w-40 md:w-28 sm:w-20 mobile:w-16 cursor-none"><img src={computer} alt="" /></div>
@@ -34,12 +35,20 @@ function Home() {
           <div className="2xl:w-40 xl:w-40 md:w-28 sm:w-20 mobile:w-16 cursor-none"><img src={boxgame} alt="" /></div>
         </div>
       </div>
+                         {/* <CardListSlider /> */}
+
       <div className=" flex justify-start flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16 ">
       <MyCountBox  name='Best Selling Products' days='This Month'/>
         <CardListSlider />
       </div>
+                              {/* Spiker-Session */}
       <Spiker/>
-      <Arrivel/>
+                               {/* Arrival-Session  */}
+                               <OurProduct/>                
+
+      {/* <Arrivel/> */}
+
+
     </div>
   );
 }

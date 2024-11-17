@@ -137,17 +137,19 @@ export default () => {
         1440: {
           slidesPerView: 5,spaceBetween:40
         },
-        1024: {
+        1100: {
           slidesPerView: 4,spaceBetween:50
+        }, 800: {
+          slidesPerView: 3,spaceBetween:50
         },
-        464: {
+        500: {
           slidesPerView: 2,spaceBetween:40
         },
         350: {
-          slidesPerView: 1,spaceBetween:10
+          slidesPerView: 1,spaceBetween:0
         },
         320: {
-          slidesPerView: 1,spaceBetween:50
+          slidesPerView: 1,spaceBetween:0
         },
       }}
       navigation
@@ -161,7 +163,7 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
     >
 
-      <div className="flex ">
+      <div className="flex  ">
 
 
         {

@@ -137,7 +137,7 @@ function Arrivel() {
       <div className="ml-5">
         <MyCountBox name={"New Arrival"} days={"Featured"} />
       </div>
-      <div className="flex justify-center items-center bg-orange-400 my-10">
+      <div className="flex justify-center items-center  my-10">
         <div className="w-full max-w-[1170px] h-auto lg:h-[600px] flex flex-col lg:flex-row  gap-4 lg:gap-[30px] p-4">
           <div
             className="flex items-end p-7 w-full lg:w-[50%]  bg-black"
