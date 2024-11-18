@@ -16,10 +16,12 @@ import OurProduct from "../components/OurProduct";
 import cheak from "../assets/arrivel/cheak.png";
 import headphone1 from "../assets/arrivel/headphone.png";
 import Vector from "../assets/arrivel/Vector.png";
+import { Link } from "react-router-dom";
+import { IoMdArrowUp } from "react-icons/io";
 
 function Home() {
   return (
-    <div className=" flex flex-col justify-center ">
+    <div id="mainhome" className="  flex flex-col justify-center ">
       {/* Hero */}
       <Hero />
       <div className=" flex justify-start flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16  ">
@@ -62,8 +64,8 @@ function Home() {
       <OurProduct />
 
       <Arrivel />
-      <div className="center gap-[88px] my-24 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col mobile:flex-col ">
-        <div className="flex flex-col gap-6 justify-center items-center"> 
+      <div className="center  gap-[88px] my-24 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col mobile:flex-col ">
+        <div className="flex flex-col gap-6 justify-center items-center">
           <div className="bg-gray-400 rounded-full p-1 cursor-none">
             {" "}
             <div className="bg-black w-10 h-10 m-2 p-2 rounded-full">
@@ -72,10 +74,13 @@ function Home() {
             </div>
           </div>
           <div className="center flex-col">
-            <h2 className="font-semibold text-xl text-black">FREE AND FAST DELIVERY</h2>
-            <h3 className="font-normal text-sm text-black">Free delivery for all orders over $140</h3>
+            <h2 className="font-semibold text-xl text-black">
+              FREE AND FAST DELIVERY
+            </h2>
+            <h3 className="font-normal text-sm text-black">
+              Free delivery for all orders over $140
+            </h3>
           </div>
-
         </div>
         <div className="flex flex-col gap-6 justify-center items-center">
           <div className="bg-gray-400 rounded-full p-1 cursor-none">
@@ -86,8 +91,12 @@ function Home() {
             </div>
           </div>
           <div className="center flex-col">
-            <h2 className="font-semibold text-xl text-black">24/7 CUSTOMER SERVICE</h2>
-            <h3 className="font-normal text-sm text-black">Friendly 24/7 customer support</h3>
+            <h2 className="font-semibold text-xl text-black">
+              24/7 CUSTOMER SERVICE
+            </h2>
+            <h3 className="font-normal text-sm text-black">
+              Friendly 24/7 customer support
+            </h3>
           </div>
         </div>
         <div className="flex flex-col gap-6 justify-center items-center">
@@ -99,9 +108,21 @@ function Home() {
             </div>
           </div>
           <div className="center flex-col">
-            <h2 className="font-semibold text-xl text-black">MONEY BACK GUARANTEE</h2>
-            <h3 className="font-normal text-sm text-black">We reurn money within 30 days</h3>
+            <h2 className="font-semibold text-xl text-black">
+              MONEY BACK GUARANTEE
+            </h2>
+            <h3 className="font-normal text-sm text-black">
+              We reurn money within 30 days
+            </h3>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-row justify-end m-3 mx-8">
+        {" "}
+        <div className="bg-gray-200 p-2 rounded-full">
+          <a href={"#mainhome"}>
+            <IoMdArrowUp className="text-2xl" />
+          </a>
         </div>
       </div>
     </div>

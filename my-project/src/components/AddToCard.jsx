@@ -14,7 +14,7 @@ export function AddToCard({
   return (
     <>
 
-      <div className="main  bg-white  w-[270px] h-[350px] my-4 rounded ">
+      <div className="main  bg-white  w-[270px] h-[350px] my-4 rounded mobile:m-auto ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] flex flex-col relative center ">
           <button
             className=" w-[55px] h-[26px] bg-myTheme rounded text-white absolute left-3 right-4 bottom-1 top-3 ;
