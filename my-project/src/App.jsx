@@ -14,6 +14,7 @@ import SiginUp from "./Pages/SiginUp";
 import Profile from "./Pages/Profile";
 import { Navigate } from "react-router-dom";
 import AllProduct from "./Pages/AllProduct";
+import CardTotal from "./Pages/CardTotal";
 
 
 
@@ -33,6 +34,7 @@ let logSing=false
           <Route path="/AllProduct" element={<AllProduct/>}/>
           <Route path="/About" element={<About/>}/>
           <Route path="/Contact" element={<Contact/>}/>
+          <Route path="/CardTotal" element={<CardTotal/>}/>
           
           <Route path="/SiginUp"  element={<SiginUp/>}/>
           {logSing?

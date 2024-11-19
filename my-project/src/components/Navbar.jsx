@@ -22,7 +22,7 @@ export default function MyNavbar() {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <nav className=" center   justify-around p-6  border-b-2 border-gray-100 relative">
+      <nav className=" flex  items-center  justify-evenly p-6  border-b-2 border-gray-100 relative">
         {/* logo */}
         <div className="imglogo center ">
           <img

@@ -143,7 +143,7 @@ export default () => {
           slidesPerView: 3,spaceBetween:50
         },
         500: {
-          slidesPerView: 2,spaceBetween:40
+          slidesPerView: 1,spaceBetween:40
         },
         350: {
           slidesPerView: 1,spaceBetween:0
