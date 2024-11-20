@@ -5,7 +5,7 @@ function Spiker() {
   return (
     <>
       <div className="center  ">
-        <div className="2xl:w-[1170px] 2xl:h-[500px] xl:w-[1170px] xl:h-[500px] lg:w-[1170px] lg:h-[500px]  md:w-auto md:h-auto   sm:w-auto sm:h-auto mobile:w-auto mobile:h-auto bg-black center my-12 gap-7">
+        <div className="2xl:w-[1170px] 2xl:h-[500px] xl:w-[1170px] xl:h-[500px] lg:w-[1170px] lg:h-[500px]  md:w-auto md:h-auto   sm:w-auto sm:h-auto mobile:w-auto mobile:h-auto bg-black center rounded my-12 gap-7">
           <div className="w-[50%] ">
           <div className="flex flex-col justify-center w-[100%] ml-14 2xl:gap-14 xl:gap-14 lg:gap-14 md:gap-10 md:py-4 sm:gap-4 sm:py-4 mobile:py-4 mobile:gap-2">
             <div className="font-semibold 2xl:text-base xl:text-base lg:text-base md:text-sm sm:text-xs mobile:text-[6px] ">
