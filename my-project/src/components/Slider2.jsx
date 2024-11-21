@@ -15,22 +15,21 @@ import { FiEye } from "react-icons/fi";
 
 
 
-let AddToCardlist = [
+  let AddToCardlist2 = [
     {
-      discount: "-40%",
-      className:'bg-myTheme',
+      // discount: "-40%",
+      // className:'bg-myTheme',
       productName: "HAVIT HV-G92 Gamepad",
       delPrice: "$160",
       newPrice: "$120",
       starRank: "(88)",
       image:game,
-      // deleticon:<RiDeleteBin6Line />,
       hearticon:<SlHeart />,
       eyeicon:<FiEye />
     },
     {
-      discount: "-35%",
-      className:'bg-myTheme',
+      // discount: "-35%",
+      // className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -40,8 +39,8 @@ let AddToCardlist = [
       eyeicon:<FiEye />
     },
     {
-      discount: "-30%",
-      className:'bg-myTheme',
+      // discount: "-30%",
+      // className:'bg-myTheme',
       productName: "IPS LCD Gaming Monitor",
       delPrice: "$400",
       newPrice: "$350",
@@ -52,8 +51,8 @@ let AddToCardlist = [
 
     },
     {
-      discount: "-25%",
-      className:'bg-myTheme',
+      // discount: "-25%",
+      // className:'bg-myTheme',
       productName: "S-Series Comfort Chair",
       delPrice: "$400",
       newPrice: "$375",
@@ -64,8 +63,8 @@ let AddToCardlist = [
 
     },
     {
-      discount: "-35%",
-      className:'bg-myTheme',
+      // discount: "-35%",
+      // className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -75,8 +74,8 @@ let AddToCardlist = [
       eyeicon:<FiEye />
     },
     {
-      discount: "-30%",
-      className:'bg-myTheme',
+      // discount: "-30%",
+      // className:'bg-myTheme',
       productName: "IPS LCD Gaming WallStan",
       delPrice: "$400",
       newPrice: "$350",
@@ -87,8 +86,8 @@ let AddToCardlist = [
 
     },
     {
-      discount: "-25%",
-      className:'bg-myTheme',
+      // discount: "-25%",
+      // className:'bg-myTheme',
       productName: "S-Series Comfort Spiker",
       delPrice: "$400",
       newPrice: "$375",
@@ -99,8 +98,8 @@ let AddToCardlist = [
 
     },
      {
-      discount: "-15%",
-      className:'bg-myTheme',
+      // discount: "-15%",
+      // className:'bg-myTheme',
       productName: "S-Series Comfort KeyBoard",
       delPrice: "$400",
       newPrice: "$375",
@@ -111,8 +110,8 @@ let AddToCardlist = [
 
     },
     {
-      discount: "-20%",
-      className:'bg-myTheme',
+      // discount: "-20%",
+      // className:'bg-myTheme',
       productName: "S-Series Comfort KeyBoard",
       delPrice: "$400",
       newPrice: "$375",
@@ -123,8 +122,8 @@ let AddToCardlist = [
 
     },
     {
-      discount: "-35%",
-      className:'bg-myTheme',
+      // discount: "-35%",
+      // className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -134,8 +133,8 @@ let AddToCardlist = [
       eyeicon:<FiEye />
     },
     {
-      discount: "-15%",
-      className:'bg-myTheme',
+      // discount: "-15%",
+      // className:'bg-myTheme',
       productName: "S-Series Comfort KeyBoard",
       delPrice: "$400",
       newPrice: "$375",
@@ -146,10 +145,6 @@ let AddToCardlist = [
 
     },
   ];
-  
-
-
- 
 
 import { Navigation, Pagination, Scrollbar, A11y ,Autoplay} from 'swiper/modules';
 
@@ -162,8 +157,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { AddToCard } from './AddToCard';
 
-
-export default () => {
+export function CardListSlider2 ()  {
   return (
    <>
    <div>
@@ -205,17 +199,17 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
     >
 
+    
       <div className="flex  ">
 
 
         {
-          AddToCardlist.map((value,index)=>{
+          AddToCardlist2.map((value,index)=>{
         return    <SwiperSlide key={index}><AddToCard id={index} hearticon={value.hearticon} eyeicon={value.eyeicon} className={value.className}  image={value.image} discount={value.discount} productName={value.productName} delPrice={value.delPrice} newPrice={value.newPrice} starRank={value.starRank}/></SwiperSlide>
 
           })
         }
       </div>
-      
       
     </Swiper>
    </div>

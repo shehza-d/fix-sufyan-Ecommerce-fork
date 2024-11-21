@@ -3,6 +3,8 @@ import star from "../assets/images/Five star.png";
 import { Link } from "react-router-dom";
 
 
+
+
 export function AddToCard({
   discount,
   productName,
@@ -10,6 +12,10 @@ export function AddToCard({
   newPrice,
   starRank,
   image,
+  className,
+  deleticon,
+  hearticon,
+  eyeicon
 }) {
   return (
     <>
@@ -17,13 +23,16 @@ export function AddToCard({
       <div className="main  bg-white  w-[270px] h-[350px] my-4 rounded mobile:m-auto ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] flex flex-col relative center ">
           <button
-            className=" w-[55px] h-[26px] bg-myTheme rounded text-white absolute left-3 right-4 bottom-1 top-3 ;
-"
+            className={` w-[55px] h-[26px] ${className} rounded text-white absolute left-3 right-4 bottom-1 top-3 ;`}
           >
             {discount}
-          </button>
-          <img className=" w-[172px] h-[152px] m-10 hover:scale-125" src={image} alt="" />
-          <div className="bg-black text-white w-[100%] flex  items-end justify-center p-2 rounded"><Link>Add To Card</Link></div>
+          </button><div className="flex flex-col">
+        { hearticon? <div className="absolute top-2 left-[240px] text-base bg-white p-1 rounded-full"> {hearticon}</div>:null}
+      { deleticon?   <div className="absolute top-2 left-[240px] text-base bg-white p-1 rounded-full">{deleticon}</div>:null}
+        { eyeicon? <div className="absolute top-9 left-[240px] text-base bg-white p-1 rounded-full"> {eyeicon}</div>:null}
+          </div>
+          <img className=" w-[172px] h-[155px] m-auto hover:scale-125" src={image} alt="" />
+          <Link  className="bg-white hover:bg-black h text-white w-[100%] flex  items-end justify-center p-2 rounded-b">Add To Card</Link>
         </div>
         <div className="myp w-[201px] h-[84px] ml-2 gap-2 my-3">
           <h2 className="w-[201]  text-sm font-medium hover:text-myTheme">{productName}</h2>

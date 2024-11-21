@@ -22,6 +22,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 let AddToCardlist = [
     {
       discount: "-40%",
+      className:'bg-myTheme',
       productName: "HAVIT HV-G92 Gamepad",
       delPrice: "$160",
       newPrice: "$120",
@@ -30,6 +31,7 @@ let AddToCardlist = [
     },
     {
       discount: "-35%",
+      className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -38,6 +40,7 @@ let AddToCardlist = [
     },
     {
       discount: "-30%",
+      className:'bg-myTheme',
       productName: "IPS LCD Gaming Monitor",
       delPrice: "$400",
       newPrice: "$350",
@@ -46,6 +49,7 @@ let AddToCardlist = [
     },
     {
       discount: "-25%",
+      className:'bg-myTheme',
       productName: "S-Series Comfort Chair",
       delPrice: "$400",
       newPrice: "$375",
@@ -56,6 +60,7 @@ let AddToCardlist = [
   let AddToCardlist2 = [
     {
       discount: "-40%",
+      className:'bg-myTheme',
       productName: "HAVIT HV-G92 Gamepad",
       delPrice: "$160",
       newPrice: "$120",
@@ -64,6 +69,7 @@ let AddToCardlist = [
     },
     {
       discount: "-35%",
+      className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -72,6 +78,7 @@ let AddToCardlist = [
     },
     {
       discount: "-30%",
+      className:'bg-myTheme',
       productName: "IPS LCD Gaming Monitor",
       delPrice: "$400",
       newPrice: "$350",
@@ -80,6 +87,7 @@ let AddToCardlist = [
     },
     {
       discount: "-25%",
+      className:'bg-myTheme',
       productName: "S-Series Comfort Chair",
       delPrice: "$400",
       newPrice: "$375",
@@ -94,6 +102,7 @@ let AddToCardlist = [
   let AddToCardlist3 = [
     {
       discount: "-40%",
+      className:'bg-myTheme',
       productName: "HAVIT HV-G92 Gamepad",
       delPrice: "$160",
       newPrice: "$120",
@@ -102,6 +111,7 @@ let AddToCardlist = [
     },
     {
       discount: "-35%",
+      className:'bg-myTheme',
       productName: "AK-900 Wired Keyboard",
       delPrice: "$400",
       newPrice: "$370",
@@ -110,6 +120,7 @@ let AddToCardlist = [
     },
     {
       discount: "-30%",
+      className:'bg-myTheme',
       productName: "IPS LCD Gaming Monitor",
       delPrice: "$400",
       newPrice: "$350",
@@ -118,6 +129,7 @@ let AddToCardlist = [
     },
     {
       discount: "-25%",
+      className:'bg-myTheme',
       productName: "S-Series Comfort Chair",
       delPrice: "$400",
       newPrice: "$375",
@@ -140,6 +152,7 @@ function AllProduct() {
               <>
                 {" "}
                 <AddToCard
+                className={value.className}
                   discount={value.discount}
                   productName={value.productName}
                   delPrice={value.delPrice}
@@ -160,6 +173,7 @@ function AllProduct() {
               <>
                 {" "}
                 <AddToCard
+                className={value.className}
                   discount={value.discount}
                   productName={value.productName}
                   delPrice={value.delPrice}
@@ -183,6 +197,7 @@ function AllProduct() {
               <>
                 {" "}
                 <AddToCard
+                  className={value.className}
                   discount={value.discount}
                   productName={value.productName}
                   delPrice={value.delPrice}

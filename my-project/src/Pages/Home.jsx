@@ -18,6 +18,7 @@ import headphone1 from "../assets/arrivel/headphone.png";
 import Vector from "../assets/arrivel/Vector.png";
 import { Link } from "react-router-dom";
 import { IoMdArrowUp } from "react-icons/io";
+import { CardListSlider2 } from "../components/Slider2";
 
 function Home() {
   return (
@@ -54,9 +55,9 @@ function Home() {
       </div>
       {/* <CardListSlider /> */}
 
-      <div className=" flex justify-start flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16 ">
+      <div className=" flex justify-start  flex-col 2xl:ml-10 xl:ml-10 lg:ml-10 md:ml-0 sm:ml-0 mobile:ml-0 my-16 ">
         <MyCountBox name="Best Selling Products" days="This Month" />
-        <CardListSlider />
+        <CardListSlider2 />
       </div>
       {/* Spiker-Session */}
       <Spiker />

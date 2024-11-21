@@ -10,6 +10,9 @@ import game2 from '../assets/images/game2.png'
 import shose from '../assets/images/shose.png'
 import camera from '../assets/images/camera.png'
 import chair from '../assets/images/chair.png'
+import { SlHeart } from "react-icons/sl";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FiEye } from "react-icons/fi";
 
 
 let AddToCardlist = [
@@ -19,7 +22,9 @@ let AddToCardlist = [
     delPrice: "$160",
     newPrice: "$120",
     starRank: "(88)",
-    image:dogfood
+    image:dogfood,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
     discount: "-35%",
@@ -27,7 +32,9 @@ let AddToCardlist = [
     delPrice: "$400",
     newPrice: "$370",
     starRank: "(99)",
-    image:babycar
+    image:babycar,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
     discount: "-30%",
@@ -35,7 +42,9 @@ let AddToCardlist = [
     delPrice: "$400",
     newPrice: "$350",
     starRank: "(77)",
-    image:apper2
+    image:apper2,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
     discount: "-25%",
@@ -43,41 +52,53 @@ let AddToCardlist = [
     delPrice: "$400",
     newPrice: "$375",
     starRank: "(99)",
-    image:shose
+    image:shose,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
 ];
 let AddToCardlist2 = [
   {
-    discount: "-40%",
+    discount: "New",
+    className:'bg-[#00FF66]',
     productName: "HAVIT HV-G92 Gamepad",
     delPrice: "$160",
     newPrice: "$120",
     starRank: "(88)",
-    image:camera
+    image:camera,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
-    discount: "-35%",
+    // discount: "-35%",
     productName: "AK-900 Wired Keyboard",
     delPrice: "$400",
     newPrice: "$370",
     starRank: "(99)",
-    image:laptop
+    image:laptop,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
-    discount: "-30%",
+    discount: "New",
+    className:'bg-[#00FF66]',
     productName: "IPS LCD Gaming Monitor",
     delPrice: "$400",
     newPrice: "$350",
     starRank: "(77)",
-    image:game2
+    image:game2,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
   {
-    discount: "-25%",
+    // discount: "-25%",
     productName: "S-Series Comfort Chair",
     delPrice: "$400",
     newPrice: "$375",
     starRank: "(99)",
-    image:chair
+    image:chair,
+    hearticon:<SlHeart />,
+    eyeicon:<FiEye />
   },
 ];
 
@@ -95,11 +116,14 @@ function OurProduct() {
               <>
                 {" "}
                 <AddToCard
-                  discount={value.discount}
+                // className='bg-myTheme'
+                  // discount={value.discount}
                   productName={value.productName}
                   delPrice={value.delPrice}
                   newPrice={value.newPrice}
                   image={value.image}
+                  hearticon={value.hearticon} 
+                  eyeicon={value.eyeicon}
                 />
               </>
             );
@@ -114,11 +138,15 @@ function OurProduct() {
               <>
                 {" "}
                 <AddToCard
+                 
+                 className={value.className}
                   discount={value.discount}
                   productName={value.productName}
                   delPrice={value.delPrice}
                   newPrice={value.newPrice}
                   image={value.image}
+                  hearticon={value.hearticon} 
+                  eyeicon={value.eyeicon}
                 />
               </>
             );
