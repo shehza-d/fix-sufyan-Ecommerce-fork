@@ -12,9 +12,9 @@ export default function MyFooter(second) {
         
         <footer className=" body-font bg-black text-white  m-0">
   <div className="container px-5 py-24 mx-auto bg-black  mb-0">
-    <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 justify-center  gap-5 ">
+    <div className="flex flex-wrap md:text-center xl:text-left 2xl:text-left lg:text-left text-center -mb-10 -mx-4 justify-center  gap-5 ">
       <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-bold text-white tracking-widest text-2xl mb-4">
+        <h2 className="title-font  font-bold text-white tracking-widest text-2xl mb-4">
         Exclusive
         </h2>
         <nav className="list-none mb-10">
@@ -47,13 +47,13 @@ export default function MyFooter(second) {
         Support
         </h2>
         <nav className="list-none mb-10">
-          <li className="text-gray-300 hover:text-myTheme mb-4">
+          <li className="text-gray-300  mb-4">
             111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
           </li>
-          <li className="text-gray-300 hover:text-myTheme mb-2">
+          <li className="text-gray-300  mb-2">
             exclusive@gmail.com
           </li>
-          <li className="text-gray-300 hover:text-myTheme ">
+          <li className="text-gray-300  ">
           +92015-888-9999
           </li>
           {/* <li>
@@ -66,20 +66,20 @@ export default function MyFooter(second) {
           Account
         </h2>
         <nav className="list-none mb-10">
-          <li  className="text-white hover:text-myTheme mb-3">
+          <li  className="text-white  mb-3">
          My Account
           </li>
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme mb-3">Login / Register</a>
+            <a className="text-gray-300  mb-3">Login / Register</a>
           </li>
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme mb-3">Cart</a>
+            <a className="text-gray-300 hover:cursor-pointer hover:text-myTheme mb-3">Cart</a>
           </li>
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme mb-3">Wishlist</a>
+            <a className="text-gray-300 hover:cursor-pointer hover:text-myTheme mb-3">Wishlist</a>
           </li>
           <li>
-            <a className="text-gray-300 hover:text-myTheme mb-3">Shop</a>
+            <a className="text-gray-300 hover:cursor-pointer hover:text-myTheme mb-3">Shop</a>
           </li>
         </nav>
       </div>
@@ -108,16 +108,16 @@ export default function MyFooter(second) {
         </h2>
         <nav className="list-none mb-10">
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme">Privacy Policy</a>
+            <a className="text-gray-300 ">Privacy Policy</a>
           </li>
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme">Terms Of Use</a>
+            <a className="text-gray-300 ">Terms Of Use</a>
           </li>
           <li className="mb-3">
-            <a className="text-gray-300 hover:text-myTheme">FAQ</a>
+            <a className="text-gray-300 ">FAQ</a>
           </li>
           <li >
-            <a className="text-gray-300 hover:text-myTheme">Contact</a>
+            <a className="text-gray-300 ">Contact</a>
           </li>
         </nav>
       </div>
@@ -127,9 +127,9 @@ export default function MyFooter(second) {
         </h2>
         <nav className="list-none mb-10">
           <li className="mb-1">
-            <a className="text-gray-300 text-[11px] hover:text-myTheme">Save $3 with App New User Only</a>
+            <a className="text-gray-300 text-[11px] ">Save $3 with App New User Only</a>
           </li>
-          <li className="text-gray-300 hover:text-myTheme mb-4">
+          <li className="text-gray-300  mb-4">
            <div className="flex gap-2 justify-center">
             <div><img src={qrcode} alt="" /></div>
             <div>
