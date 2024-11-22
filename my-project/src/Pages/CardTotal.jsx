@@ -3,7 +3,17 @@ import led from "../assets/images/led.png";
 import game from "../assets/images/game.png";
 import { MdCancel } from "react-icons/md";
 
+
 function CardTotal() {
+
+
+let API_KEY=()=>{
+ let data=fetch('//dummyjson.com/test')
+
+
+
+}
+
   return (
     <>
       <div className="center flex flex-col items-center my-10 px-4">
@@ -13,7 +23,7 @@ function CardTotal() {
         </div>
               {/* large screen table */}
         {/* Table Section */}
-        <div className="w-full max-w-6xl bg-slate-600 justify-center   h-[356px] rounded sm:hidden mobile:hidden 2xl:flex xl:flex lg:flex md:flex  flex-col gap-6 p-6 shadow-md">
+        <div className="w-full max-w-6xl  justify-center   h-[356px] rounded sm:hidden mobile:hidden 2xl:flex xl:flex lg:flex md:flex  flex-col gap-6 p-6 shadow-md">
           {/* Table Header */}
           <div className="hidden z-10  md:grid grid-cols-4 gap-4 bg-slate-100 p-4 rounded text-center md:text-left font-semibold text-gray-700">
             <div>Product</div>
