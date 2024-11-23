@@ -152,9 +152,8 @@ function AllProduct() {
     // <div>AllProduct</div>
     <>
      
-
-      <div className="flex justify-center items-center  my-14  flex-row">{products===null?'Please Wait...':null}
-        <div  className=" flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
+      <div className="flex justify-center items-center   my-14  flex-row">{products===null?<div className="flex justify-center h-[100vh] text-center items-center font-extrabold text-lg">Please Wait...</div>:null}
+        <div  className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
           {products?.map((value, index) => {
             let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
             // console.log(discountPrice);
@@ -176,6 +175,8 @@ function AllProduct() {
           })}
         </div>
       </div>
+<div className="flex justify-center items-start my-3">      <Link className="bg-myTheme active:bg-red-700 py-3 px-8 rounded text-white" to={"/"}>Go To Home</Link>
+</div>
 
       {/* <div className="flex justify-center items-center  my-14  flex-row">
         <div className="flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">

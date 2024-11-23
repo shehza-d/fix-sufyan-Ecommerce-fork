@@ -118,6 +118,7 @@ function OurProduct() {
                 <AddToCard
                 // className='bg-myTheme'
                   // discount={value.discount}
+                  key={index}
                   productName={value.productName}
                   delPrice={value.delPrice}
                   newPrice={value.newPrice}
@@ -155,7 +156,7 @@ function OurProduct() {
       </div>
       <div className="flex justify-center items-center my-3">
         <div className="">
-          <Link  to={"/AllProduct#abc"} className="bg-myTheme rounded cursor-pointer active:bg-red-700 text-white w-[234px] h-[56px] flex justify-center items-center">Show More</Link>
+          <Link  to={"/AllProduct"} className="bg-myTheme rounded cursor-pointer active:bg-red-700 text-white w-[234px] h-[56px] flex justify-center items-center">Show More</Link>
         </div>
       </div>
     </>

@@ -30,6 +30,7 @@ let logSing=false
       
 
         <Routes>
+
           <Route path="/" element={<Home/>}/>
           <Route path="/AllProduct" element={<AllProduct/>}/>
           <Route path="/About" element={<About/>}/>

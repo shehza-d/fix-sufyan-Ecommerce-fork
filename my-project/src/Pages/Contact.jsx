@@ -1,6 +1,7 @@
 
 import React from 'react'
 import location from "../assets/profilepic/location.jpg"
+import { Link } from 'react-router-dom'
 
 function Contact() {
   return (
@@ -90,7 +91,10 @@ function Contact() {
       </p>
     </div>
   </div>
+  <div className="flex justify-center items-start my-3"><Link className="bg-myTheme active:bg-red-700 py-3 px-8 rounded text-white" to={"/"}>Go To Home</Link></div>
 </section>
+
+
 
   )
 }

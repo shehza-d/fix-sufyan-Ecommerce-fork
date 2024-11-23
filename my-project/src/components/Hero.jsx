@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <><div className='flex justify-center items-center'>
       <div id="heroMain" className=" w-[100%] h-[500px] 2xl:flex-row xl:flex-row lg:flex-col md:flex-col sm:flex-col mobile:flex-col flex mb-7 md:h-auto sm:h-auto mobile:h-auto  sm:mb-7 ">
-``        <div className=" 2xl:w-[30%] md:hidden sm:hidden mobile:hidden lg:flex 2xl:felx xl:flex   xl:w-[30%] lg:w-[100%] md:w-[100%]   sm:w-[100%] mobile:w-[100%] center 2xl:pl-12 xl:pl-12 border-r ">
+        <div className=" 2xl:w-[30%] md:hidden sm:hidden mobile:hidden lg:flex 2xl:felx xl:flex   xl:w-[30%] lg:w-[100%] md:w-[100%]   sm:w-[100%] mobile:w-[100%] center 2xl:pl-12 xl:pl-12 border-r ">
           <div className=" w-[270px] h-[344px] flex flex-col gap-4 2xl:w-[270px] 2xl:h-[344px] xl:w-[270px] xl:h-[344px] xl:items-start 2xl:items-start lg:items-center lg:w-[100%]  md:items-center md:w-[100%] sm:items-center sm:w-[100%]   mobile:items-center mobile:w-[100%] ">
             {heroLink.map((value, index) => {
               return (
@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="  2xl:w-[70%] xl:w-[70%] lg:w-[100%] md:w-[100%] sm:w-[100%] 2xl:h-[500px] xl:h-[500px] lg:h-[100px] center">
-          <div className=" bg-black w-[892px] py-6   gap-4 2xl:w-[892px] 2xl:h-[344px] xl:w-[892px] xl:h-[344px] lg:w-[100%]  md:w-[100%] sm:w-[100%] mobile:w-[100%] ">
+          <div className=" bg-black w-[892px] py-6   gap-4 2xl:w-[892px] 2xl:h-[344px] xl:w-[892px] xl:h-[344px] lg:w-[892px]  md:w-[100%] sm:w-[100%] mobile:w-[100%] ">
             {/* inner first div */}
              <div className="flex justify-center it  "> 
                  {/* mera textarea  */}
@@ -45,7 +45,7 @@ export default function Hero() {
                 <div>
                   <h1 className=' 2xl:font-semibold  xl:font-semibold  lg:font-semibold  md:font-normal sm:font-normal mobile:font-normal   text-white leading-[60px] 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-4xl mobile:text-xl'><span className='flex flex-col gap-3'><span >Up to 10% </span> <span>off Voucher</span> </span>  </h1>
                 </div>
-                <div className='flex font-semibold - text-base gap-2 text-white  hover:cursor-pointer hover:text-myTheme'> Shop Now <span className='text-sm pt-1'><FaArrowRight /></span></div>
+                <div className='flex font-semibold - text-base gap-2  text-white  hover:cursor-pointer hover:text-myTheme'> Shop Now <span className='text-sm pt-1'><FaArrowRight /></span></div>
               </div>
                   {/* apple phone side */}
               <div id='apple phone side' className='-mb-20'> 

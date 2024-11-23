@@ -160,7 +160,7 @@ import { AddToCard } from './AddToCard';
 export function CardListSlider2 ()  {
   return (
    <>
-   <div>
+   <div className='ml-12 mr-12   p-5 rounded '>
    <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}

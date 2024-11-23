@@ -4,6 +4,7 @@ import ab from "../assets/about/ab.jpg"
 import cd from "../assets/about/cd.jpg"
 import fe from "../assets/about/fe.jpg"
 import gh from "../assets/about/gh.jpg"
+import { Link } from 'react-router-dom'
 function About() {
   return (
     // <div>About</div>
@@ -51,7 +52,8 @@ function About() {
                 </div>
             </div>
         </div>
-    
+        <div className="flex justify-center items-start my-3"><Link className="bg-myTheme active:bg-red-700 py-3 px-8 rounded text-white" to={"/"}>Go To Home</Link></div>
+
     
     
     </>

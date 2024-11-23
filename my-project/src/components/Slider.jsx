@@ -166,7 +166,7 @@ import { AddToCard } from './AddToCard';
 export default () => {
   return (
    <>
-   <div>
+   <div className='ml-12 mr-12   p-5 rounded '>
    <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
@@ -205,7 +205,7 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
     >
 
-      <div className="flex  ">
+      <div className="flex   ">
 
 
         {
