@@ -152,13 +152,14 @@ function AllProduct() {
    console.log(searchValue);
 
    const searchProducts=()=>{
-    let result=  products?.filter((value)=>{
-    return value.price<100
+    let result =  products?.filter((value)=>{
+    return value.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
     })
     console.log(result);
+    return result
     
        }
-   searchProducts()
+    let searchReasult=  searchProducts()
 
   return (
     // <div>AllProduct</div>
@@ -185,7 +186,9 @@ function AllProduct() {
           className="px-6 py-2 w-full rounded flex-1 outline-none bg-white"
           required=""
         />
-        <button
+        {/* <button onClick={()=>{
+          searchProducts()
+        }}
           type="submit"
           className="w-full md:w-auto px-6 py-3 bg-black border-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded transition-all"
         >
@@ -194,7 +197,7 @@ function AllProduct() {
               Search
             </span>
           </div>
-        </button>
+        </button> */}
       </label>
     </form>
 
@@ -202,7 +205,10 @@ function AllProduct() {
 </div>
       <div className="flex justify-center items-center   my-14  flex-row">{products===null?<div className="flex justify-center h-[100vh] w-full text-center items-center font-extrabold text-lg">Please Wait...</div>:null}
         <div  className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
-          {products?.map((value, index) => {
+        
+        {/* sir se question karna he */}
+          {/* {searchProducts.length=== 0?'Product Is Not Found':null} */}
+          {searchReasult?.map((value, index) => {
             let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
             // console.log(discountPrice);
             
