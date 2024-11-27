@@ -7,7 +7,7 @@ import ReactStars from 'react-stars'
 
 
 export function AddToCard({
-  key,
+ 
   discount,
   productName,
   delPrice,
@@ -23,7 +23,7 @@ export function AddToCard({
   return (
     <>
 
-      <div id={key} className="main  bg-white drop-shadow-lg shadow-black   w-[270px] h-[370px] my-4 rounded mobile:m-auto ">
+      <div  className="main  bg-white drop-shadow-lg shadow-black   w-[270px] h-[370px] my-4 rounded mobile:m-auto ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] flex flex-col relative center ">
           <button
             className={` w-[55px] h-[26px] ${className} rounded text-white absolute left-3 right-4 bottom-1 top-3 ;`}

@@ -19,124 +19,129 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
-let AddToCardlist = [
-  {
-    discount: "-40%",
-    className: "bg-myTheme",
-    productName: "HAVIT HV-G92 Gamepad",
-    delPrice: "$160",
-    newPrice: "$120",
-    starRank: "(88)",
-    image: dogfood,
-  },
-  {
-    discount: "-35%",
-    className: "bg-myTheme",
-    productName: "AK-900 Wired Keyboard",
-    delPrice: "$400",
-    newPrice: "$370",
-    starRank: "(99)",
-    image: babycar,
-  },
-  {
-    discount: "-30%",
-    className: "bg-myTheme",
-    productName: "IPS LCD Gaming Monitor",
-    delPrice: "$400",
-    newPrice: "$350",
-    starRank: "(77)",
-    image: apper2,
-  },
-  {
-    discount: "-25%",
-    className: "bg-myTheme",
-    productName: "S-Series Comfort Chair",
-    delPrice: "$400",
-    newPrice: "$375",
-    starRank: "(99)",
-    image: shose,
-  },
-];
-let AddToCardlist2 = [
-  {
-    discount: "-40%",
-    className: "bg-myTheme",
-    productName: "HAVIT HV-G92 Gamepad",
-    delPrice: "$160",
-    newPrice: "$120",
-    starRank: "(88)",
-    image: camera,
-  },
-  {
-    discount: "-35%",
-    className: "bg-myTheme",
-    productName: "AK-900 Wired Keyboard",
-    delPrice: "$400",
-    newPrice: "$370",
-    starRank: "(99)",
-    image: laptop,
-  },
-  {
-    discount: "-30%",
-    className: "bg-myTheme",
-    productName: "IPS LCD Gaming Monitor",
-    delPrice: "$400",
-    newPrice: "$350",
-    starRank: "(77)",
-    image: game2,
-  },
-  {
-    discount: "-25%",
-    className: "bg-myTheme",
-    productName: "S-Series Comfort Chair",
-    delPrice: "$400",
-    newPrice: "$375",
-    starRank: "(99)",
-    image: chair,
-  },
-];
+// let AddToCardlist = [
+//   {
+//     discount: "-40%",
+//     className: "bg-myTheme",
+//     productName: "HAVIT HV-G92 Gamepad",
+//     delPrice: "$160",
+//     newPrice: "$120",
+//     starRank: "(88)",
+//     image: dogfood,
+//   },
+//   {
+//     discount: "-35%",
+//     className: "bg-myTheme",
+//     productName: "AK-900 Wired Keyboard",
+//     delPrice: "$400",
+//     newPrice: "$370",
+//     starRank: "(99)",
+//     image: babycar,
+//   },
+//   {
+//     discount: "-30%",
+//     className: "bg-myTheme",
+//     productName: "IPS LCD Gaming Monitor",
+//     delPrice: "$400",
+//     newPrice: "$350",
+//     starRank: "(77)",
+//     image: apper2,
+//   },
+//   {
+//     discount: "-25%",
+//     className: "bg-myTheme",
+//     productName: "S-Series Comfort Chair",
+//     delPrice: "$400",
+//     newPrice: "$375",
+//     starRank: "(99)",
+//     image: shose,
+//   },
+// ];
+// let AddToCardlist2 = [
+//   {
+//     discount: "-40%",
+//     className: "bg-myTheme",
+//     productName: "HAVIT HV-G92 Gamepad",
+//     delPrice: "$160",
+//     newPrice: "$120",
+//     starRank: "(88)",
+//     image: camera,
+//   },
+//   {
+//     discount: "-35%",
+//     className: "bg-myTheme",
+//     productName: "AK-900 Wired Keyboard",
+//     delPrice: "$400",
+//     newPrice: "$370",
+//     starRank: "(99)",
+//     image: laptop,
+//   },
+//   {
+//     discount: "-30%",
+//     className: "bg-myTheme",
+//     productName: "IPS LCD Gaming Monitor",
+//     delPrice: "$400",
+//     newPrice: "$350",
+//     starRank: "(77)",
+//     image: game2,
+//   },
+//   {
+//     discount: "-25%",
+//     className: "bg-myTheme",
+//     productName: "S-Series Comfort Chair",
+//     delPrice: "$400",
+//     newPrice: "$375",
+//     starRank: "(99)",
+//     image: chair,
+//   },
+// ];
 
-let AddToCardlist3 = [
-  {
-    discount: "-40%",
-    className: "bg-myTheme",
-    productName: "HAVIT HV-G92 Gamepad",
-    delPrice: "$160",
-    newPrice: "$120",
-    starRank: "(88)",
-    image: led,
-  },
-  {
-    discount: "-35%",
-    className: "bg-myTheme",
-    productName: "AK-900 Wired Keyboard",
-    delPrice: "$400",
-    newPrice: "$370",
-    starRank: "(99)",
-    image: keyboard,
-  },
-  {
-    discount: "-30%",
-    className: "bg-myTheme",
-    productName: "IPS LCD Gaming Monitor",
-    delPrice: "$400",
-    newPrice: "$350",
-    starRank: "(77)",
-    image: spikerCard,
-  },
-  {
-    discount: "-25%",
-    className: "bg-myTheme",
-    productName: "S-Series Comfort Chair",
-    delPrice: "$400",
-    newPrice: "$375",
-    starRank: "(99)",
-    image: pars,
-  },
-];
+// let AddToCardlist3 = [
+//   {
+//     discount: "-40%",
+//     className: "bg-myTheme",
+//     productName: "HAVIT HV-G92 Gamepad",
+//     delPrice: "$160",
+//     newPrice: "$120",
+//     starRank: "(88)",
+//     image: led,
+//   },
+//   {
+//     discount: "-35%",
+//     className: "bg-myTheme",
+//     productName: "AK-900 Wired Keyboard",
+//     delPrice: "$400",
+//     newPrice: "$370",
+//     starRank: "(99)",
+//     image: keyboard,
+//   },
+//   {
+//     discount: "-30%",
+//     className: "bg-myTheme",
+//     productName: "IPS LCD Gaming Monitor",
+//     delPrice: "$400",
+//     newPrice: "$350",
+//     starRank: "(77)",
+//     image: spikerCard,
+//   },
+//   {
+//     discount: "-25%",
+//     className: "bg-myTheme",
+//     productName: "S-Series Comfort Chair",
+//     delPrice: "$400",
+//     newPrice: "$375",
+//     starRank: "(99)",
+//     image: pars,
+//   },
+// ];
+
+
+
+
+
 function AllProduct() {
   const [products, setProducts] = useState(null);
-  const API_KEY = "https://dummyjson.com/products";
+  const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
   let getProductData = async (event) => {
     let response = await axios(API_KEY);
     let data =response.data.products
@@ -148,10 +153,10 @@ function AllProduct() {
     getProductData();
 
   },[])
-       
+        // search value useState
    const [searchValue,setSearchValue]=useState("")
    console.log( 'searchValue',searchValue);
-
+            //  filter Function
    const searchProducts=()=>{
     let result =  products?.filter((value)=>{
     return value.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
@@ -214,7 +219,8 @@ function AllProduct() {
             // console.log(discountPrice);
             
             return (
-              <>
+              <div key={value.id}
+>
                 {" "}
                 <AddToCard
                 key={value.id}
@@ -226,7 +232,7 @@ function AllProduct() {
                   image={value.thumbnail}
                   rating={value.rating}
                 />
-              </>
+              </div>
             );
           })}
         </div>

@@ -156,8 +156,25 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { AddToCard } from './AddToCard';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export function CardListSlider2 ()  {
+
+
+  const [products, setProducts] = useState(null);
+  const API_KEY = 'https://dummyjson.com/products?limit=6&skip=50';
+  let getProductData = async (event) => {
+    let response = await axios(API_KEY);
+    let data =response.data.products
+    // console.log(data);
+    
+   return setProducts( data)
+  };
+  useEffect(()=>{
+    getProductData();
+  
+  },[]) 
   return (
    <>
    <div className='ml-12 mr-12   p-5 rounded '>
@@ -204,8 +221,20 @@ export function CardListSlider2 ()  {
 
 
         {
-          AddToCardlist2.map((value,index)=>{
-        return    <SwiperSlide key={index}><AddToCard id={index} hearticon={value.hearticon} eyeicon={value.eyeicon} className={value.className}  image={value.image} discount={value.discount} productName={value.productName} delPrice={value.delPrice} newPrice={value.newPrice} starRank={value.starRank}/></SwiperSlide>
+          products?.map((value,index)=>{
+            let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
+
+        return    <SwiperSlide key={index}>
+<AddToCard
+                key={value.id}
+                className='bg-myTheme'
+                  discount={`${Math.round(value.discountPercentage)}%`}
+                  productName={value.title}
+                  delPrice={`$${value.price.toFixed(2)}`}
+                  newPrice={`$${discountPrice}`}
+                  image={value.thumbnail}
+                  rating={value.rating}
+                />             </SwiperSlide>
 
           })
         }

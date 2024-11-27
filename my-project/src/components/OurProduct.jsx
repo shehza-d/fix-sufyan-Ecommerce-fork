@@ -136,7 +136,7 @@ function OurProduct() {
         <div className="flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
           {AddToCardlist2.map((value, index) => {
             return (
-              <>
+              <  div key={index}>
                 {" "}
                 <AddToCard
                  
@@ -149,7 +149,7 @@ function OurProduct() {
                   hearticon={value.hearticon} 
                   eyeicon={value.eyeicon}
                 />
-              </>
+              </ div >
             );
           })}
         </div>
