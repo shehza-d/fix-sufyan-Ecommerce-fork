@@ -141,13 +141,29 @@ import { Navigate } from "react-router-dom";
 
 function AllProduct() {
   const [products, setProducts] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
+const[error,SetError]=useState(false)
   const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
   let getProductData = async (event) => {
-    let response = await axios(API_KEY);
+    try {
+      setIsLoading(true)
+
+      let response = await axios(API_KEY);
     let data =response.data.products
-    // console.log(data);
+    console.log(data);
+    setIsLoading(false)
     
    return setProducts( data)
+    } catch (error) {
+      setIsLoading(false)
+      SetError(true)
+      console.log(error.response.statusText);
+      
+    }
+    finally{
+      
+      setIsLoading(false)
+     } 
   };
   useEffect(()=>{
     getProductData();
@@ -158,6 +174,7 @@ function AllProduct() {
    console.log( 'searchValue',searchValue);
             //  filter Function
    const searchProducts=()=>{
+    
     let result =  products?.filter((value)=>{
     return value.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
     })
@@ -209,9 +226,10 @@ function AllProduct() {
 
   </div>
 </div>
-      <div className="flex justify-center items-center   my-14  flex-row">{products===null?<div className="flex justify-center h-[100vh] w-full text-center items-center font-extrabold text-lg">Please Wait...</div>:null}
+      <div className="flex justify-center items-center   my-14  flex-row">
         <div  className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
-        
+        {isLoading?<div className='font-extrabold text-4xl'>Loading...</div>:null}
+         {error?<div className='font-extrabold text-4xl'>Not Found</div>:null}
         {/* sir se question karna he */}
           {/* {searchProducts.length=== 0?'Product Is Not Found':null} */}
           {searchReasult?.map((value, index) => {

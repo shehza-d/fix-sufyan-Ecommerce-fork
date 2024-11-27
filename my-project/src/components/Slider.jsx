@@ -11,10 +11,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEye } from "react-icons/fi";
 
 
-
-
-
-
 let AddToCardlist = [
     {
       discount: "-40%",
@@ -146,11 +142,7 @@ let AddToCardlist = [
 
     },
   ];
-  
 
-
- 
- 
 
 import { Navigation, Pagination, Scrollbar, A11y ,Autoplay} from 'swiper/modules';
 
@@ -176,13 +168,26 @@ export default () => {
 
 
   const [products, setProducts] = useState(null);
+const [isLoading, setIsLoading] = useState(false)
+const[error,SetError]=useState(false)
 const API_KEY = 'https://dummyjson.com/products?limit=6&skip=150';
 let getProductData = async (event) => {
+ try {
+  setIsLoading(true)
   let response = await axios(API_KEY);
   let data =response.data.products
   // console.log(data);
-  
+  setIsLoading(false)
  return setProducts( data)
+  
+ } catch (error) {
+  setIsLoading(false)
+  SetError(true)
+  console.log(error.response.statusText);
+ }
+ finally{
+  setIsLoading(false)
+ } 
 };
 useEffect(()=>{
   getProductData();
@@ -229,14 +234,16 @@ useEffect(()=>{
       onSlideChange={() => console.log('slide change')}
     >
 
-      <div className="flex   ">
-
+      <div className="flex justify-center items-center   ">
+{isLoading?<div className='font-extrabold text-4xl'>Loading...</div>:null}
+{error?<div className='font-extrabold text-4xl'>Not Found</div>:null}
 
         {
           products?.map((value,index)=>{
             let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
 
         return    <SwiperSlide key={index}>
+
  <AddToCard
                 key={value.id}
                 className='bg-myTheme'
