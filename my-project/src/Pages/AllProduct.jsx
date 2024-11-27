@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
 let AddToCardlist = [
   {
@@ -149,18 +150,17 @@ function AllProduct() {
   },[])
        
    const [searchValue,setSearchValue]=useState("")
-   console.log(searchValue);
+   console.log( 'searchValue',searchValue);
 
    const searchProducts=()=>{
     let result =  products?.filter((value)=>{
     return value.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
     })
-    console.log(result);
+    // console.log(result);
     return result
     
        }
-    let searchReasult=  searchProducts()
-
+       let searchReasult=  searchProducts()
   return (
     // <div>AllProduct</div>
     <>
@@ -169,7 +169,8 @@ function AllProduct() {
     <p className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
       Search Products
     </p>
-    <form >
+    <form  onSubmit={()=>{    
+}}>
       <label
         className="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded gap-2 shadow-2xl focus-within:border-gray-300"
         htmlFor="search-bar"

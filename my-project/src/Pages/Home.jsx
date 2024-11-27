@@ -19,6 +19,7 @@ import Vector from "../assets/arrivel/Vector.png";
 import { Link } from "react-router-dom";
 import { IoMdArrowUp } from "react-icons/io";
 import { CardListSlider2 } from "../components/Slider2";
+import ProductDetails from "./ProductDetails";
 
 function Home() {
   return (
@@ -126,7 +127,10 @@ function Home() {
           </a>
         </div>
       </div>
+      <ProductDetails/>
+
     </div>
+
   );
 }
 

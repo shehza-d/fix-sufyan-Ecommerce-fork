@@ -37,6 +37,7 @@ let logSing=false
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/CardTotal" element={<CardTotal/>}/>
           
+          
           <Route path="/SiginUp"  element={<SiginUp/>}/>
           {logSing?
         <>
