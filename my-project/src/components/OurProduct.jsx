@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MyCountBox from "./MyCountBox";
 import { AddToCard } from "./AddToCard";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import chair from '../assets/images/chair.png'
 import { SlHeart } from "react-icons/sl";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEye } from "react-icons/fi";
+import axios from "axios";
 
 
 let AddToCardlist = [
@@ -103,29 +104,46 @@ let AddToCardlist2 = [
 ];
 
 function OurProduct() {
+
+  const [products, setProducts] = useState(null);
+  const API_KEY = 'https://dummyjson.com/products?limit=8&skip=100';
+  let getProductData = async (event) => {
+    let response = await axios(API_KEY);
+    let data =response.data.products
+    // console.log(data);
+    
+   return setProducts( data)
+  };
+  useEffect(()=>{
+    getProductData();
+  
+  },[])
+  
   return (
     <>
       <div className="ml-5">
         <MyCountBox name="Explore Our Products" days="Our Products" />
       </div>
 
-      <div className="flex justify-center items-center  my-14  flex-row">
-        <div className="flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
-          {AddToCardlist.map((value, index) => {
-            
+      <div className=" flex justify-center items-center  my-14  flex-row">
+        <div className="flex 2xl:w-[1170px] xl:w-[1170px] lg:w-auto 2xl:h-[732px] xl:h-[732px] lg:h-auto md:w-auto md:h-auto sm:w-auto sm:h-auto mobile:w-auto mobile:h-auto sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row my-3 lg:flex-row lg:gap-4 gap-[30px]">
+          {products?.map((value, index) => {
+                        let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
+
             return (
               <>
                 {" "}
                 <AddToCard
                 // className='bg-myTheme'
                   // discount={value.discount}
-                  key={index}
-                  productName={value.productName}
-                  delPrice={value.delPrice}
-                  newPrice={value.newPrice}
-                  image={value.image}
-                  hearticon={value.hearticon} 
-                  eyeicon={value.eyeicon}
+                  key={value.id}
+                className='bg-myTheme'
+                  discount={`${Math.round(value.discountPercentage)}%`}
+                  productName={value.title}
+                  delPrice={`$${value.price.toFixed(2)}`}
+                  newPrice={`$${discountPrice}`}
+                  image={value.thumbnail}
+                  rating={value.rating}
                 />
               </>
             );
@@ -133,7 +151,7 @@ function OurProduct() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center  my-14  flex-row">
+      {/* <div className="flex justify-center items-center  my-14  flex-row">
         <div className="flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
           {AddToCardlist2.map((value, index) => {
             return (
@@ -154,7 +172,7 @@ function OurProduct() {
             );
           })}
         </div>
-      </div>
+      </div> */}
       <div className="flex justify-center items-center my-3">
         <div className="">
           <Link  to={"/AllProduct"} className="bg-myTheme rounded cursor-pointer active:bg-red-700 text-white w-[234px] h-[56px] flex justify-center items-center">Show More</Link>

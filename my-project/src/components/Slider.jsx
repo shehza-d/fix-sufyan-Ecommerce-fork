@@ -169,7 +169,7 @@ export default () => {
 
   const [products, setProducts] = useState(null);
 const [isLoading, setIsLoading] = useState(false)
-const[error,SetError]=useState(false)
+const[error,SetError]=useState(null)
 const API_KEY = 'https://dummyjson.com/products?limit=6&skip=150';
 let getProductData = async (event) => {
  try {
@@ -182,7 +182,7 @@ let getProductData = async (event) => {
   
  } catch (error) {
   setIsLoading(false)
-  SetError(true)
+  SetError(error.response.statusText)
   console.log(error.response.statusText);
  }
  finally{
@@ -236,7 +236,7 @@ useEffect(()=>{
 
       <div className="flex justify-center items-center   ">
 {isLoading?<div className='font-extrabold text-4xl'>Loading...</div>:null}
-{error?<div className='font-extrabold text-4xl'>Not Found</div>:null}
+{error}
 
         {
           products?.map((value,index)=>{

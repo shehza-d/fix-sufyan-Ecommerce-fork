@@ -142,7 +142,7 @@ import { Navigate } from "react-router-dom";
 function AllProduct() {
   const [products, setProducts] = useState(null);
   const [isLoading, setIsLoading] = useState(false)
-const[error,SetError]=useState(false)
+const[error,SetError]=useState(null)
   const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
   let getProductData = async (event) => {
     try {
@@ -156,7 +156,7 @@ const[error,SetError]=useState(false)
    return setProducts( data)
     } catch (error) {
       setIsLoading(false)
-      SetError(true)
+      SetError(error.response.statusText|| 'Unknown Error')
       console.log(error.response.statusText);
       
     }
@@ -228,8 +228,9 @@ const[error,SetError]=useState(false)
 </div>
       <div className="flex justify-center items-center   my-14  flex-row">
         <div  className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
-        {isLoading?<div className='font-extrabold text-4xl'>Loading...</div>:null}
-         {error?<div className='font-extrabold text-4xl'>Not Found</div>:null}
+        {isLoading?<div className='font-extrabold text-4xl h-[100vh]'>Loading...</div>:null}
+       
+         {error}
         {/* sir se question karna he */}
           {/* {searchProducts.length=== 0?'Product Is Not Found':null} */}
           {searchReasult?.map((value, index) => {
