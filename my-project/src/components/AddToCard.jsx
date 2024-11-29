@@ -23,7 +23,7 @@ export function AddToCard({
 }) {
   return (
     <>
-<Link id={id} to={'/productDetail/:id'}>
+<Link id={id} to={`/productDetail/${id}`}>
       < div   className="main  bg-white drop-shadow-lg shadow-black   w-[270px] h-[370px] my-4 rounded mobile:m-auto ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] flex flex-col relative center ">
           <button

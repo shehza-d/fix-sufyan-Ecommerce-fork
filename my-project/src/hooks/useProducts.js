@@ -10,6 +10,7 @@ function useProducts(skipLimit) {const [products, setProducts] = useState(null);
     let getProductData = async (event) => {
       try {
        setIsLoading(true)
+       SetError(null)
        let response = await axios(API_KEY);
        let data =response.data.products
        // console.log(data);
