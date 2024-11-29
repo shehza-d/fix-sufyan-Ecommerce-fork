@@ -137,6 +137,7 @@ function OurProduct() {
                 // className='bg-myTheme'
                   // discount={value.discount}
                   key={value.id}
+                  id={value.id}
                 className='bg-myTheme'
                   discount={`${Math.round(value.discountPercentage)}%`}
                   productName={value.title}

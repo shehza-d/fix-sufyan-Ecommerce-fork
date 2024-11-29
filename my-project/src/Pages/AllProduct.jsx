@@ -18,6 +18,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import useProducts from "../hooks/useProducts";
 
 // let AddToCardlist = [
 //   {
@@ -140,35 +141,38 @@ import { Navigate } from "react-router-dom";
 
 
 function AllProduct() {
-  const [products, setProducts] = useState(null);
-  const [isLoading, setIsLoading] = useState(false)
-const[error,SetError]=useState(null)
-  const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
-  let getProductData = async (event) => {
-    try {
-      setIsLoading(true)
 
-      let response = await axios(API_KEY);
-    let data =response.data.products
-    console.log(data);
-    setIsLoading(false)
+
+  const [products,error,isLoading]=useProducts('limit=32&skip=80')
+//   const [products, setProducts] = useState(null);
+//   const [isLoading, setIsLoading] = useState(false)
+// const[error,SetError]=useState(null)
+//   const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
+//   let getProductData = async (event) => {
+//     try {
+//       setIsLoading(true)
+
+//       let response = await axios(API_KEY);
+//     let data =response.data.products
+//     console.log(data);
+//     setIsLoading(false)
     
-   return setProducts( data)
-    } catch (error) {
-      setIsLoading(false)
-      SetError(error.response.statusText|| 'Unknown Error')
-      console.log(error.response.statusText);
+//    return setProducts( data)
+//     } catch (error) {
+//       setIsLoading(false)
+//       SetError(error.response.statusText|| 'Unknown Error')
+//       console.log(error.response.statusText);
       
-    }
-    finally{
+//     }
+//     finally{
       
-      setIsLoading(false)
-     } 
-  };
-  useEffect(()=>{
-    getProductData();
+//       setIsLoading(false)
+//      } 
+//   };
+//   useEffect(()=>{
+//     getProductData();
 
-  },[])
+//   },[])
         // search value useState
    const [searchValue,setSearchValue]=useState("")
    console.log( 'searchValue',searchValue);
@@ -243,6 +247,7 @@ const[error,SetError]=useState(null)
                 {" "}
                 <AddToCard
                 key={value.id}
+                id={value.id}
                 className='bg-myTheme'
                   discount={`${Math.round(value.discountPercentage)}%`}
                   productName={value.title}

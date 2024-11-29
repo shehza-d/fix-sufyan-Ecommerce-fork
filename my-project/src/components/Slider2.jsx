@@ -15,136 +15,136 @@ import { FiEye } from "react-icons/fi";
 
 
 
-  let AddToCardlist2 = [
-    {
-      // discount: "-40%",
-      // className:'bg-myTheme',
-      productName: "HAVIT HV-G92 Gamepad",
-      delPrice: "$160",
-      newPrice: "$120",
-      starRank: "(88)",
-      image:game,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
-    },
-    {
-      // discount: "-35%",
-      // className:'bg-myTheme',
-      productName: "AK-900 Wired Keyboard",
-      delPrice: "$400",
-      newPrice: "$370",
-      starRank: "(99)",
-      image:chair,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
-    },
-    {
-      // discount: "-30%",
-      // className:'bg-myTheme',
-      productName: "IPS LCD Gaming Monitor",
-      delPrice: "$400",
-      newPrice: "$350",
-      starRank: "(77)",
-      image:led,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  // let AddToCardlist2 = [
+  //   {
+  //     // discount: "-40%",
+  //     // className:'bg-myTheme',
+  //     productName: "HAVIT HV-G92 Gamepad",
+  //     delPrice: "$160",
+  //     newPrice: "$120",
+  //     starRank: "(88)",
+  //     image:game,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-35%",
+  //     // className:'bg-myTheme',
+  //     productName: "AK-900 Wired Keyboard",
+  //     delPrice: "$400",
+  //     newPrice: "$370",
+  //     starRank: "(99)",
+  //     image:chair,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-30%",
+  //     // className:'bg-myTheme',
+  //     productName: "IPS LCD Gaming Monitor",
+  //     delPrice: "$400",
+  //     newPrice: "$350",
+  //     starRank: "(77)",
+  //     image:led,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-    {
-      // discount: "-25%",
-      // className:'bg-myTheme',
-      productName: "S-Series Comfort Chair",
-      delPrice: "$400",
-      newPrice: "$375",
-      starRank: "(99)",
-      image:pars,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-25%",
+  //     // className:'bg-myTheme',
+  //     productName: "S-Series Comfort Chair",
+  //     delPrice: "$400",
+  //     newPrice: "$375",
+  //     starRank: "(99)",
+  //     image:pars,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-    {
-      // discount: "-35%",
-      // className:'bg-myTheme',
-      productName: "AK-900 Wired Keyboard",
-      delPrice: "$400",
-      newPrice: "$370",
-      starRank: "(99)",
-      image:chair,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
-    },
-    {
-      // discount: "-30%",
-      // className:'bg-myTheme',
-      productName: "IPS LCD Gaming WallStan",
-      delPrice: "$400",
-      newPrice: "$350",
-      starRank: "(77)",
-      image:wood,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-35%",
+  //     // className:'bg-myTheme',
+  //     productName: "AK-900 Wired Keyboard",
+  //     delPrice: "$400",
+  //     newPrice: "$370",
+  //     starRank: "(99)",
+  //     image:chair,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-30%",
+  //     // className:'bg-myTheme',
+  //     productName: "IPS LCD Gaming WallStan",
+  //     delPrice: "$400",
+  //     newPrice: "$350",
+  //     starRank: "(77)",
+  //     image:wood,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-    {
-      // discount: "-25%",
-      // className:'bg-myTheme',
-      productName: "S-Series Comfort Spiker",
-      delPrice: "$400",
-      newPrice: "$375",
-      starRank: "(99)",
-      image:spikerCard,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-25%",
+  //     // className:'bg-myTheme',
+  //     productName: "S-Series Comfort Spiker",
+  //     delPrice: "$400",
+  //     newPrice: "$375",
+  //     starRank: "(99)",
+  //     image:spikerCard,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-     {
-      // discount: "-15%",
-      // className:'bg-myTheme',
-      productName: "S-Series Comfort KeyBoard",
-      delPrice: "$400",
-      newPrice: "$375",
-      starRank: "(99)",
-      image:keyboard,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //    {
+  //     // discount: "-15%",
+  //     // className:'bg-myTheme',
+  //     productName: "S-Series Comfort KeyBoard",
+  //     delPrice: "$400",
+  //     newPrice: "$375",
+  //     starRank: "(99)",
+  //     image:keyboard,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-    {
-      // discount: "-20%",
-      // className:'bg-myTheme',
-      productName: "S-Series Comfort KeyBoard",
-      delPrice: "$400",
-      newPrice: "$375",
-      starRank: "(99)",
-      image:wood,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-20%",
+  //     // className:'bg-myTheme',
+  //     productName: "S-Series Comfort KeyBoard",
+  //     delPrice: "$400",
+  //     newPrice: "$375",
+  //     starRank: "(99)",
+  //     image:wood,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-    {
-      // discount: "-35%",
-      // className:'bg-myTheme',
-      productName: "AK-900 Wired Keyboard",
-      delPrice: "$400",
-      newPrice: "$370",
-      starRank: "(99)",
-      image:chair,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
-    },
-    {
-      // discount: "-15%",
-      // className:'bg-myTheme',
-      productName: "S-Series Comfort KeyBoard",
-      delPrice: "$400",
-      newPrice: "$375",
-      starRank: "(99)",
-      image:apper,
-      hearticon:<SlHeart />,
-      eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-35%",
+  //     // className:'bg-myTheme',
+  //     productName: "AK-900 Wired Keyboard",
+  //     delPrice: "$400",
+  //     newPrice: "$370",
+  //     starRank: "(99)",
+  //     image:chair,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
+  //   },
+  //   {
+  //     // discount: "-15%",
+  //     // className:'bg-myTheme',
+  //     productName: "S-Series Comfort KeyBoard",
+  //     delPrice: "$400",
+  //     newPrice: "$375",
+  //     starRank: "(99)",
+  //     image:apper,
+  //     hearticon:<SlHeart />,
+  //     eyeicon:<FiEye />
 
-    },
-  ];
+  //   },
+  // ];
 
 import { Navigation, Pagination, Scrollbar, A11y ,Autoplay} from 'swiper/modules';
 
@@ -158,23 +158,25 @@ import 'swiper/css/scrollbar';
 import { AddToCard } from './AddToCard';
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import useProducts from '../hooks/useProducts'
 
 export function CardListSlider2 ()  {
+  const [products,error,isLoading]=useProducts('limit=8&skip=180')
 
 
-  const [products, setProducts] = useState(null);
-  const API_KEY = 'https://dummyjson.com/products?limit=6&skip=50';
-  let getProductData = async (event) => {
-    let response = await axios(API_KEY);
-    let data =response.data.products
-    // console.log(data);
+  // const [products, setProducts] = useState(null);
+  // const API_KEY = 'https://dummyjson.com/products?limit=6&skip=50';
+  // let getProductData = async (event) => {
+  //   let response = await axios(API_KEY);
+  //   let data =response.data.products
+  //   // console.log(data);
     
-   return setProducts( data)
-  };
-  useEffect(()=>{
-    getProductData();
+  //  return setProducts( data)
+  // };
+  // useEffect(()=>{
+  //   getProductData();
   
-  },[]) 
+  // },[]) 
   return (
    <>
    <div className='ml-12 mr-12   p-5 rounded '>
@@ -224,9 +226,9 @@ export function CardListSlider2 ()  {
           products?.map((value,index)=>{
             let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
 
-        return    <SwiperSlide key={index}>
+        return    <SwiperSlide key={value.id}>
 <AddToCard
-                key={value.id}
+                id={value.id}
                 className='bg-myTheme'
                   discount={`${Math.round(value.discountPercentage)}%`}
                   productName={value.title}

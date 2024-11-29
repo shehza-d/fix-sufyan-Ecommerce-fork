@@ -15,6 +15,7 @@ import Profile from "./Pages/Profile";
 import { Navigate } from "react-router-dom";
 import AllProduct from "./Pages/AllProduct";
 import CardTotal from "./Pages/CardTotal";
+import ProductDetails from "./Pages/ProductDetails";
 
 
 
@@ -32,6 +33,7 @@ let logSing=false
         <Routes>
 
           <Route path="/" element={<Home/>}/>
+          <Route path='/productDetail/:id' element={<ProductDetails/>}/>
           <Route path="/AllProduct" element={<AllProduct/>}/>
           <Route path="/About" element={<About/>}/>
           <Route path="/Contact" element={<Contact/>}/>

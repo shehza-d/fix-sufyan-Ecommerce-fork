@@ -157,6 +157,7 @@ import { AddToCard } from './AddToCard';
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
+import useProducts from '../hooks/useProducts'
 
  
 
@@ -165,34 +166,35 @@ import { useEffect } from 'react'
 
 export default () => {
 
+  const [products,error,isLoading]=useProducts('limit=8&skip=150')
 
 
-  const [products, setProducts] = useState(null);
-const [isLoading, setIsLoading] = useState(false)
-const[error,SetError]=useState(null)
-const API_KEY = 'https://dummyjson.com/products?limit=6&skip=150';
-let getProductData = async (event) => {
- try {
-  setIsLoading(true)
-  let response = await axios(API_KEY);
-  let data =response.data.products
-  // console.log(data);
-  setIsLoading(false)
- return setProducts( data)
+//   const [products, setProducts] = useState(null);
+// const [isLoading, setIsLoading] = useState(false)
+// const[error,SetError]=useState(null)
+// const API_KEY = 'https://dummyjson.com/products?limit=6&skip=150';
+// let getProductData = async (event) => {
+//  try {
+//   setIsLoading(true)
+//   let response = await axios(API_KEY);
+//   let data =response.data.products
+//   // console.log(data);
+//   setIsLoading(false)
+//  return setProducts( data)
   
- } catch (error) {
-  setIsLoading(false)
-  SetError(error.response.statusText)
-  console.log(error.response.statusText);
- }
- finally{
-  setIsLoading(false)
- } 
-};
-useEffect(()=>{
-  getProductData();
+//  } catch (error) {
+//   setIsLoading(false)
+//   SetError(error.response.statusText)
+//   console.log(error.response.statusText);
+//  }
+//  finally{
+//   setIsLoading(false)
+//  } 
+// };
+// useEffect(()=>{
+//   getProductData();
 
-},[]) 
+// },[]) 
   return (
    <>
    <div className='ml-12 mr-12   p-5 rounded '>
@@ -242,10 +244,10 @@ useEffect(()=>{
           products?.map((value,index)=>{
             let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
 
-        return    <SwiperSlide key={index}>
+        return    <SwiperSlide key={value.id}>
 
  <AddToCard
-                key={value.id}
+                id={value.id}
                 className='bg-myTheme'
                   discount={`${Math.round(value.discountPercentage)}%`}
                   productName={value.title}

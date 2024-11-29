@@ -127,7 +127,6 @@ function Home() {
           </a>
         </div>
       </div>
-      <ProductDetails/>
 
     </div>
 

@@ -14,6 +14,7 @@ export function AddToCard({
   newPrice,
   starRank,
   image,
+  id,
   className,
   deleticon,
   hearticon,
@@ -22,8 +23,8 @@ export function AddToCard({
 }) {
   return (
     <>
-
-      <div  className="main  bg-white drop-shadow-lg shadow-black   w-[270px] h-[370px] my-4 rounded mobile:m-auto ">
+<Link id={id} to={'/productDetail/:id'}>
+      < div   className="main  bg-white drop-shadow-lg shadow-black   w-[270px] h-[370px] my-4 rounded mobile:m-auto ">
         <div className="img w-[270px] h-[250px] bg-[#F5F5F5] flex flex-col relative center ">
           <button
             className={` w-[55px] h-[26px] ${className} rounded text-white absolute left-3 right-4 bottom-1 top-3 ;`}
@@ -56,6 +57,7 @@ export function AddToCard({
           </div>
         </div>
       </div>
+      </Link>
 
     </>
   );
