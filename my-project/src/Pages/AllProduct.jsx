@@ -136,84 +136,76 @@ import useProducts from "../hooks/useProducts";
 //   },
 // ];
 
-
-
-
-
 function AllProduct() {
+  const { products, error, isLoading } = useProducts("limit=32&skip=80");
+  //   const [products, setProducts] = useState(null);
+  //   const [isLoading, setIsLoading] = useState(false)
+  // const[error,SetError]=useState(null)
+  //   const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
+  //   let getProductData = async (event) => {
+  //     try {
+  //       setIsLoading(true)
 
+  //       let response = await axios(API_KEY);
+  //     let data =response.data.products
+  //     console.log(data);
+  //     setIsLoading(false)
 
-  const [products,error,isLoading]=useProducts('limit=32&skip=80')
-//   const [products, setProducts] = useState(null);
-//   const [isLoading, setIsLoading] = useState(false)
-// const[error,SetError]=useState(null)
-//   const API_KEY = 'https://dummyjson.com/products?limit=40&skip=77';
-//   let getProductData = async (event) => {
-//     try {
-//       setIsLoading(true)
+  //    return setProducts( data)
+  //     } catch (error) {
+  //       setIsLoading(false)
+  //       SetError(error.response.statusText|| 'Unknown Error')
+  //       console.log(error.response.statusText);
 
-//       let response = await axios(API_KEY);
-//     let data =response.data.products
-//     console.log(data);
-//     setIsLoading(false)
-    
-//    return setProducts( data)
-//     } catch (error) {
-//       setIsLoading(false)
-//       SetError(error.response.statusText|| 'Unknown Error')
-//       console.log(error.response.statusText);
-      
-//     }
-//     finally{
-      
-//       setIsLoading(false)
-//      } 
-//   };
-//   useEffect(()=>{
-//     getProductData();
+  //     }
+  //     finally{
 
-//   },[])
-        // search value useState
-   const [searchValue,setSearchValue]=useState("")
-   console.log( 'searchValue',searchValue);
-            //  filter Function
-   const searchProducts=()=>{
-    
-    let result =  products?.filter((value)=>{
-    return value.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
-    })
+  //       setIsLoading(false)
+  //      }
+  //   };
+  //   useEffect(()=>{
+  //     getProductData();
+
+  //   },[])
+  // search value useState
+  const [searchValue, setSearchValue] = useState("");
+  console.log("searchValue", searchValue);
+  //  filter Function
+  const searchProducts = () => {
+    let result = products?.filter((value) => {
+      return value.title
+        .toLowerCase()
+        .includes(searchValue.toLocaleLowerCase());
+    });
     // console.log(result);
-    return result
-    
-       }
-       let searchReasult=  searchProducts()
+    return result;
+  };
+  let searchReasult = searchProducts();
   return (
     // <div>AllProduct</div>
     <>
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-  <div className="relative isolate overflow-hidden bg-white px-6 py-20 text-center sm:px-16 sm:shadow-sm">
-    <p className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-      Search Products
-    </p>
-    <form  onSubmit={()=>{    
-}}>
-      <label
-        className="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded gap-2 shadow-2xl focus-within:border-gray-300"
-        htmlFor="search-bar"
-      >
-        <input
-          id="search-bar"
-          placeholder="Search your Products"
-          name="q"
-          onChange={(event)=>{
-            // console.log(event.target.value);
-            setSearchValue(event.target.value)
-            
-          }}
-          className="px-6 py-2 w-full rounded flex-1 outline-none bg-white"
-          required=""
-        />
-        {/* <button onClick={()=>{
+      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="relative isolate overflow-hidden bg-white px-6 py-20 text-center sm:px-16 sm:shadow-sm">
+          <p className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Search Products
+          </p>
+          <form onSubmit={() => {}}>
+            <label
+              className="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded gap-2 shadow-2xl focus-within:border-gray-300"
+              htmlFor="search-bar"
+            >
+              <input
+                id="search-bar"
+                placeholder="Search your Products"
+                name="q"
+                onChange={(event) => {
+                  // console.log(event.target.value);
+                  setSearchValue(event.target.value);
+                }}
+                className="px-6 py-2 w-full rounded flex-1 outline-none bg-white"
+                required=""
+              />
+              {/* <button onClick={()=>{
           searchProducts()
         }}
           type="submit"
@@ -225,30 +217,32 @@ function AllProduct() {
             </span>
           </div>
         </button> */}
-      </label>
-    </form>
-
-  </div>
-</div>
+            </label>
+          </form>
+        </div>
+      </div>
       <div className="flex justify-center items-center   my-14  flex-row">
-        <div  className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
-        {isLoading?<div className='font-extrabold text-4xl h-[100vh]'>Loading...</div>:null}
-       
-         {error}
-        {/* sir se question karna he */}
+        <div className=" flex sm:flex-col  w-[1170px]  flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">
+          {isLoading ? (
+            <div className="font-extrabold text-4xl h-[100vh]">Loading...</div>
+          ) : null}
+
+          {error}
+          {/* sir se question karna he */}
           {/* {searchProducts.length=== 0?'Product Is Not Found':null} */}
           {searchReasult?.map((value, index) => {
-            let discountPrice=Math.ceil(value.price-(value.discountPercentage)*(value.price/100)).toFixed(2)
+            let discountPrice = Math.ceil(
+              value.price - value.discountPercentage * (value.price / 100)
+            ).toFixed(2);
             // console.log(discountPrice);
-            
+
             return (
-              <div key={value.id}
->
+              <div key={value.id}>
                 {" "}
                 <AddToCard
-                key={value.id}
-                id={value.id}
-                className='bg-myTheme'
+                  key={value.id}
+                  id={value.id}
+                  className="bg-myTheme"
                   discount={`${Math.round(value.discountPercentage)}%`}
                   productName={value.title}
                   delPrice={`$${value.price.toFixed(2)}`}
@@ -261,8 +255,15 @@ function AllProduct() {
           })}
         </div>
       </div>
-<div className="flex justify-center items-start my-3">      <Link className="bg-myTheme active:bg-red-700 py-3 px-8 rounded text-white" to={"/"}>Go To Home</Link>
-</div>
+      <div className="flex justify-center items-start my-3">
+        {" "}
+        <Link
+          className="bg-myTheme active:bg-red-700 py-3 px-8 rounded text-white"
+          to={"/"}
+        >
+          Go To Home
+        </Link>
+      </div>
 
       {/* <div className="flex justify-center items-center  my-14  flex-row">
         <div className="flex sm:flex-col flex-wrap mobile:flex-col lg:justify-center md:justify-center md:flex-row 2xl:flex-row xl:flex-row lg:flex-row lg:gap-4 gap-[30px]">

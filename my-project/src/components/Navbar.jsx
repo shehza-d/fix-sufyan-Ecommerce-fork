@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 
 // ../assets/logo/'
 let Mylink = [
-  { name: "Home", path:"/" },
-  { name: "Contact", path:"/Contact" },
-  { name: "About", path:"/About" },
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/Contact" },
+  { name: "About", path: "/About" },
   // { name: "Login" },
 ];
 let logSing = false;
@@ -69,90 +69,104 @@ export default function MyNavbar() {
                   className="hover:underline hover:text-myTheme hover:cursor-pointer"
                   key={index}
                 >
-                 <Link  to={value.path}> {value.name}</Link>
-                </li>
-              );
-            })}
-             
-{logSing?null:  <>
-  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                   <Link to={"/SiginUp"}>SignUp</Link>
-                </li>
- <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
-                    <Link to={"/Login"}>Login</Link>
-                </li></>
-                }
-           
-          </ul>
-        </div>
-        <div className="flex justify-center items-center list-none gap-1 mobile:text-xs sm:text-xs"> {logSing === true ? (
-              <>
-               
-                <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-smhover:cursor-pointer">
-                  <CiHeart />
-                </li>
-                <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
-                  <MdOutlineShoppingCart />
-                </li>
-
-                <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
-              <Link to="/profile"><img src={mypic} alt="" /></Link>    
-                </li>
-              </>
-            ) : (
-              <>
-            
-                <li className="text-myTheme text-2xl hover:cursor-pointer">
-                   <Link to={"/profile"}><FaUserCircle /></Link>
-                </li>
-              </>
-            )}</div>
-
-
-        {/* sm screen */}
- 
-       {menu? <div className="link top-[70px] bg-white w-[100%] z-10  lg:flex xl:flex 2xl:flex absolute">
-          <ul className="flex pl-8 flex-col gap-5">
-            {Mylink.map((value, index) => {
-              return (
-                <li
-                  className="hover:underline hover:text-myTheme hover:cursor-pointer"
-                  key={index}
-                >
-                   <Link onClick={()=>{setMenu(false)}} to={value.path}> {value.name}</Link>
+                  <Link to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
 
-            {logSing === true ? (
+            {logSing ? null : (
               <>
                 <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                <Link to={"/SiginUp"}>SignUp</Link>
+                  <Link to={"/SiginUp"}>SignUp</Link>
                 </li>
-                {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
+                  <Link to={"/Login"}>Login</Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+        <div className="flex justify-center items-center list-none gap-1 mobile:text-xs sm:text-xs">
+          {" "}
+          {logSing === true ? (
+            <>
+              <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-smhover:cursor-pointer">
+                <CiHeart />
+              </li>
+              <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
+                <MdOutlineShoppingCart />
+              </li>
+
+              <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
+                <Link to="/profile">
+                  <img src={mypic} alt="" />
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="text-myTheme text-2xl hover:cursor-pointer">
+                <Link to={"/profile"}>
+                  <FaUserCircle />
+                </Link>
+              </li>
+            </>
+          )}
+        </div>
+
+        {/* sm screen */}
+
+        {menu ? (
+          <div className="link top-[70px] bg-white w-[100%] z-10  lg:flex xl:flex 2xl:flex absolute">
+            <ul className="flex pl-8 flex-col gap-5">
+              {Mylink.map((value, index) => {
+                return (
+                  <li
+                    className="hover:underline hover:text-myTheme hover:cursor-pointer"
+                    key={index}
+                  >
+                    <Link
+                      onClick={() => {
+                        setMenu(false);
+                      }}
+                      to={value.path}
+                    >
+                      {" "}
+                      {value.name}
+                    </Link>
+                  </li>
+                );
+              })}
+
+              {logSing === true ? (
+                <>
+                  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                    <Link to={"/SiginUp"}>SignUp</Link>
+                  </li>
+                  {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <CiHeart />
                 </li>
                 <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <MdOutlineShoppingCart />
                 </li> */}
 
-                {/* <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
+                  {/* <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
                   <img src={mypic} alt="" />
                 </li> */}
-              </>
-            ) : (
-              <>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                   <Link to={"/Login"}>Login</Link>
-                </li>
-                {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
+                </>
+              ) : (
+                <>
+                  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
+                    <Link to={"/Login"}>Login</Link>
+                  </li>
+                  {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <FaUserCircle />
                 </li> */}
-              </>
-            )}
-          </ul>
-        </div>:null
-}
+                </>
+              )}
+            </ul>
+          </div>
+        ) : null}
 
         <div className="menu center sm:flex md:flex mobile:flex lg:hidden xl:hidden 2xl:hidden">
           <button
@@ -160,11 +174,9 @@ export default function MyNavbar() {
               setMenu(!menu);
             }}
           >
-            
             {menu ? <IoMdClose /> : <MdOutlineMenu />}
           </button>
         </div>
-      
       </nav>
     </>
   );

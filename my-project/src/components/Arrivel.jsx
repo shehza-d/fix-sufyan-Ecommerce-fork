@@ -108,9 +108,8 @@
 //                 </span>
 //               </div>
 //             </div>
-              
-//                </div>
 
+//                </div>
 
 //             </div>
 //           </div>
@@ -121,8 +120,6 @@
 // }
 
 // export default Arrivel;
-
-
 
 import React from "react";
 import MyCountBox from "./MyCountBox";
@@ -145,12 +142,14 @@ function Arrivel() {
               backgroundImage: `url(${ps5})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "bottom",
-              backgroundSize: "cover"
+              backgroundSize: "cover",
             }}
           >
             <div className="text-white flex flex-col 2xl:gap-[16px] xl:gap-[16px] lg:gap[16px] md:gap-3 sm:gap-1 mobile:gap-1 p-4">
               <div>
-                <h2 className="font-semibold 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-xs">PlayStation 5</h2>
+                <h2 className="font-semibold 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-xs">
+                  PlayStation 5
+                </h2>
               </div>
               <div>
                 <p className="w-[242px] h-[42px] 2xl:text-sm xl:text-sm lg:text-sm md:text-xs sm:text-xs mobile:text-[10px]">
@@ -169,7 +168,9 @@ function Arrivel() {
               <div className="w-full lg:w-[70%] text-white flex justify-center items-end p-3">
                 <div className="flex flex-col 2xl:gap-[16px] xl:gap-[16px] lg:gap[16px] md:gap-3 sm:gap-1 mobile:gap-1">
                   <div>
-                    <h2 className="font-semibold 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-xs ">Women’s Collections</h2>
+                    <h2 className="font-semibold 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-xs ">
+                      Women’s Collections
+                    </h2>
                   </div>
                   <div>
                     <p className="font-normal 2xl:text-sm xl:text-sm lg:text-sm md:text-xs sm:text-xs mobile:text-[10px]">
@@ -184,21 +185,28 @@ function Arrivel() {
                 </div>
               </div>
               <div className="w-full lg:w-[70%] flex items-end">
-                <img className="w-full lg:w-[570px] h-auto lg:h-[250px]" src={anti} alt="" />
+                <img
+                  className="w-full lg:w-[570px] h-auto lg:h-[250px]"
+                  src={anti}
+                  alt=""
+                />
               </div>
             </div>
             <div className="w-full lg:w-[570px] h-auto lg:h-[600px] flex flex-col lg:flex-row gap-4 lg:gap-7">
-              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 rounded"
+              <div
+                className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 rounded"
                 style={{
                   backgroundImage: `url(${amazone})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center bottom",
-                  backgroundSize: "cover"
+                  backgroundSize: "cover",
                 }}
               >
                 <div className="text-white flex flex-col  ">
                   <div>
-                    <h2 className="font-semibold text-[20px] leading-6">Speakers</h2>
+                    <h2 className="font-semibold text-[20px] leading-6">
+                      Speakers
+                    </h2>
                   </div>
                   <div>
                     <p className="w-[242px] h-[42px] font-normal text-xs">
@@ -212,17 +220,20 @@ function Arrivel() {
                   </div>
                 </div>
               </div>
-              <div className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 py-8 rounded"
+              <div
+                className="bg-black w-full lg:w-[270px] h-[284px] flex justify-center items-end p-4 py-8 rounded"
                 style={{
                   backgroundImage: `url(${guchi})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  backgroundSize: "cover"
+                  backgroundSize: "cover",
                 }}
               >
                 <div className="text-white flex flex-col ">
                   <div>
-                    <h2 className="font-semibold text-[20px] leading-6">Perfume</h2>
+                    <h2 className="font-semibold text-[20px] leading-6">
+                      Perfume
+                    </h2>
                   </div>
                   <div>
                     <p className="w-[242px] h-[42px] font-normal text-xs">

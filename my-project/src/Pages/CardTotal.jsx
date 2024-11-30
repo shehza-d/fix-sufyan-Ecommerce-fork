@@ -3,16 +3,10 @@ import led from "../assets/images/led.png";
 import game from "../assets/images/game.png";
 import { MdCancel } from "react-icons/md";
 
-
 function CardTotal() {
-
-
-let API_KEY=()=>{
- let data=fetch('//dummyjson.com/test')
-
-
-
-}
+  let API_KEY = () => {
+    let data = fetch("//dummyjson.com/test");
+  };
 
   return (
     <>
@@ -21,7 +15,7 @@ let API_KEY=()=>{
         <div className="w-full max-w-6xl text-gray-400 text-sm mb-5">
           Home / <span className="text-gray-200">Card</span>
         </div>
-              {/* large screen table */}
+        {/* large screen table */}
         {/* Table Section */}
         <div className="w-full max-w-6xl  justify-center   h-[356px] rounded sm:hidden mobile:hidden 2xl:flex xl:flex lg:flex md:flex  flex-col gap-6 p-6 shadow-md">
           {/* Table Header */}
@@ -38,9 +32,13 @@ let API_KEY=()=>{
             <div className="flex  mobile:items-center flex-col md:grid grid-cols-4 gap-4 bg-slate-100 p-4 rounded">
               <div className="flex sm:justify-center mobile:justify-center items-center md:gap-2 gap-4">
                 <img className="w-16 h-12" src={led} alt="LCD Monitor" />
-                <p className="text-gray-700 md:text-xs md:font-normal font-medium">LCD Monitor</p>
+                <p className="text-gray-700 md:text-xs md:font-normal font-medium">
+                  LCD Monitor
+                </p>
               </div>
-              <div className="text-gray-700 text-center md:text-left flex items-center">$650</div>
+              <div className="text-gray-700 text-center md:text-left flex items-center">
+                $650
+              </div>
               <div className="text-center flex items-center">
                 <select className="border border-gray-300 rounded w-20 p-2">
                   {[...Array(10)].map((_, i) => (
@@ -50,14 +48,18 @@ let API_KEY=()=>{
                   ))}
                 </select>
               </div>
-              <div className="text-gray-700 text-center md:text-left  flex items-center ">$650</div>
+              <div className="text-gray-700 text-center md:text-left  flex items-center ">
+                $650
+              </div>
             </div>
 
             {/* Second Product Row */}
             <div className="flex flex-col mobile:items-center md:grid grid-cols-4 gap-4 bg-slate-100 p-4 rounded">
               <div className="flex items-center md:gap-2 gap-4 sm:justify-center mobile:justify-center">
                 <img className="w-16 h-12" src={game} alt="Gamepad" />
-                <p className="text-gray-700 md:text-xs md:font-normal font-medium">HI Gamepad</p>
+                <p className="text-gray-700 md:text-xs md:font-normal font-medium">
+                  HI Gamepad
+                </p>
               </div>
               <div className="text-gray-700 text-center md:text-left">$650</div>
               <div className="text-center flex items-center ">
@@ -73,19 +75,25 @@ let API_KEY=()=>{
             </div>
           </div>
         </div>
-              {/* small screen table */}
-              <div className="overflow-y-auto h-[280px] lg:hidden xl:hidden 2xl:hidden md:hidden p-1">
-        <div className="2xl:hidden xl:hidden lg:hidden md:hidden  p- rounded sm:flex flex-col mobile:flex">
-          <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2"><div className="font-semibold text-gray-700">Product : </div><div className="flex sm:justify-center mobile:justify-center items-center md:gap-2 gap-4">
+        {/* small screen table */}
+        <div className="overflow-y-auto h-[280px] lg:hidden xl:hidden 2xl:hidden md:hidden p-1">
+          <div className="2xl:hidden xl:hidden lg:hidden md:hidden  p- rounded sm:flex flex-col mobile:flex">
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Product : </div>
+              <div className="flex sm:justify-center mobile:justify-center items-center md:gap-2 gap-4">
                 <img className="w-14 h-10" src={led} alt="LCD Monitor" />
-                <p className="text-gray-700 text-[12px]  font-normal ">LCD Monitor</p>
-              </div></div>
-          <div  className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
-            <div className="font-semibold text-gray-700">Price : </div><div>$650</div>
-          </div>
-          <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
-            <div className="font-semibold text-gray-700">Quantity : </div>
-            <div className="text-center flex items-center">
+                <p className="text-gray-700 text-[12px]  font-normal ">
+                  LCD Monitor
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Price : </div>
+              <div>$650</div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Quantity : </div>
+              <div className="text-center flex items-center">
                 <select className="border border-gray-300 rounded w-20 p-2">
                   {[...Array(10)].map((_, i) => (
                     <option key={i} value={i + 1}>
@@ -94,37 +102,44 @@ let API_KEY=()=>{
                   ))}
                 </select>
               </div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2 ">
+              <div className="font-semibold text-gray-700">Subtotal</div>
+              <div>$650</div>
+            </div>
           </div>
-          <div  className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2 ">
-            <div className="font-semibold text-gray-700">Subtotal</div>
-            <div>$650</div>
+          <div className="2xl:hidden xl:hidden lg:hidden md:hidden  p- rounded sm:flex flex-col mobile:flex">
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Product : </div>
+              <div className="flex sm:justify-center mobile:justify-center items-center md:gap-2 gap-4">
+                <img className="w-14 h-10" src={game} alt="LCD Monitor" />
+                <p className="text-gray-700 text-[12px]  font-normal">
+                  HI Gamepad
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Price : </div>
+              <div>$650</div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
+              <div className="font-semibold text-gray-700">Quantity : </div>
+              <div className="text-center flex items-center">
+                <select className="border border-gray-300 rounded w-20 p-2">
+                  {[...Array(10)].map((_, i) => (
+                    <option key={i} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2 ">
+              <div className="font-semibold text-gray-700">Subtotal</div>
+              <div>$650</div>
+            </div>
           </div>
         </div>
-        <div className="2xl:hidden xl:hidden lg:hidden md:hidden  p- rounded sm:flex flex-col mobile:flex">
-          <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2"><div className="font-semibold text-gray-700">Product : </div><div className="flex sm:justify-center mobile:justify-center items-center md:gap-2 gap-4">
-                <img className="w-14 h-10" src={game} alt="LCD Monitor" />
-                <p className="text-gray-700 text-[12px]  font-normal">HI Gamepad</p>
-              </div></div>
-          <div  className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
-            <div className="font-semibold text-gray-700">Price : </div><div>$650</div>
-          </div>
-          <div className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2">
-            <div className="font-semibold text-gray-700">Quantity : </div>
-            <div className="text-center flex items-center">
-                <select className="border border-gray-300 rounded w-20 p-2">
-                  {[...Array(10)].map((_, i) => (
-                    <option key={i} value={i + 1}>
-                      {i + 1}
-                    </option>
-                  ))}
-                </select>
-              </div>
-          </div>
-          <div  className="flex gap-10 justify-between items-center bg-slate-200 p-2 rounded my-2 ">
-            <div className="font-semibold text-gray-700">Subtotal</div>
-            <div>$650</div>
-          </div>
-        </div></div>
         {/* complete small screen table */}
 
         {/* Buttons */}
@@ -150,7 +165,6 @@ let API_KEY=()=>{
               <button className=" md:px-6 md:py-3 2xl:w-[211px] 2xl:h-[56px] xl:w-[211px] xl:h-[56px] lg:w-[211px] lg:h-[56px] mobile:w-auto mobile:h-auto sm:w-auto sm:h-auto md:text-sm  mobile:px-4 mobile:py-2 mobile:text-[12px] bg-myTheme text-white rounded active:bg-red-700">
                 Apply Coupon
               </button>
-            
             </div>
           </div>
 
@@ -182,4 +196,3 @@ let API_KEY=()=>{
 }
 
 export default CardTotal;
-
