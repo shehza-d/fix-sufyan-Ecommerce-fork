@@ -22,19 +22,19 @@ export default function MyNavbar() {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <nav className=" flex  items-center  justify-evenly p-6  border-b-2 border-gray-100 relative">
+      <nav className=" flex   items-center  justify-evenly p-6  border-b-2 border-gray-100 relative bg-white">
         {/* logo */}
         <div className="imglogo center ">
-          <img
+        <Link to={'/'}>  <img
             className="w-32 xl:flex 2xl:flex lg:flex md:hidden sm:hidden mobile:hidden"
             src={logo}
             alt="logo"
-          />
-          <img
+          /></Link>
+        <Link to={'/'}>  <img
             className="w-10 xl:hidden 2xl:hidden lg:hidden md:flex sm:flex mobile:flex"
             src={logomd}
             alt="logo"
-          />
+          /></Link>
         </div>
         {/* searchbar */}
         <div className="  mobile:w-[200px] md:w-[250px] center lg:w-[250px]  h-[38px] gap-6">
