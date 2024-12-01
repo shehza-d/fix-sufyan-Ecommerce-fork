@@ -7,6 +7,7 @@ import ReactStars from "react-stars";
 import useSWR from "swr";
 import MyCountBox from "../components/MyCountBox";
 import CardListSlider from "../components/Slider";
+import { GoHeart } from "react-icons/go";
 
 function ProductDetails() {
   const params = useParams();
@@ -20,7 +21,7 @@ function ProductDetails() {
   let discountPrice = Math.ceil(
     product?.price - product?.discountPercentage * (product?.price / 100)
   ).toFixed(2);
-  const [count,setCount]= useState(product?.minimumOrderQuantity)
+  const [count,setCount]= useState(1)
 
   return (
     <>
@@ -39,7 +40,7 @@ function ProductDetails() {
 
         <div className="w-[] gap-7  2xl:flex-row xl:flex-row lg:flex-row flex md:flex-col sm:flex-col mobile:flex-col  justify-center items-center 2xl:h-[600px] xl:h-[600px] lg:h-[600px] md:h-auto sm:h-auto mobile:h-auto  bg-fuchsia">
           <div className="bg- flex  gap-6  md:w-[50%] h-auto">
-          {product?.images.length===1?null:  <div className="bg-red- w-[170px] h-[600px] flex-col flex gap-3 justify-between items-center ">
+          {product?.images.length===1?null:  <div className="bg-red- w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
               {product?.images.map((image) => {
                 return (
                   <img
@@ -93,8 +94,12 @@ function ProductDetails() {
                 {product?.description}
               </p>
             </div>
+            <div className="minus-plus-btn-buy-btn-heart    flex gap-5 items-center">
             <div className=" countbtn w-[159px]  flex  border-2 rounded">
-              <button className="w-10 h-11 bg-white rounded  text-2xl">-</button><div  className="w-20 h-11  border-x-2 flex justify-center items-center "> {count}</div> <button className="w-10 h-11 bg-myTheme text-white rounded  text-2xl">+</button>
+              <button onClick={()=>setCount(count<2?1:count-1)} className="w-10 h-11 bg-white rounded  text-2xl">-</button><div  className="w-20 h-11  border-x-2 flex justify-center items-center "> {count}</div> <button onClick={()=>setCount(count<product?.minimumOrderQuantity?count+1:product?.minimumOrderQuantity)} className="w-10 h-11 bg-myTheme text-white rounded  text-2xl">+</button>
+            </div>
+            <div><button className="w-[165px] h-11 bg-myTheme text-white rounded">Buy Now</button></div>
+            <div className="border-2 hover:bg-myTheme hover:text-white w-10 h-10 flex items-center justify-center rounded text-2xl"><GoHeart className="" /></div>
             </div>
           </div>
         </div>
