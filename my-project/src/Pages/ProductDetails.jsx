@@ -8,6 +8,9 @@ import useSWR from "swr";
 import MyCountBox from "../components/MyCountBox";
 import CardListSlider from "../components/Slider";
 import { GoHeart } from "react-icons/go";
+import { TbTruckDelivery } from "react-icons/tb";
+import IconReturn from "../assets/details/Icon-return.png"
+
 
 function ProductDetails() {
   const params = useParams();
@@ -39,6 +42,8 @@ function ProductDetails() {
         </div>
 
         <div className="w-[] gap-7  2xl:flex-row xl:flex-row lg:flex-row flex md:flex-col sm:flex-col mobile:flex-col  justify-center items-center 2xl:h-[600px] xl:h-[600px] lg:h-[600px] md:h-auto sm:h-auto mobile:h-auto  bg-fuchsia">
+                         {/* Product Images Start */}
+
           <div className="bg- flex  gap-6  md:w-[50%] h-auto">
           {product?.images.length===1?null:  <div className="bg-red- w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
               {product?.images.map((image) => {
@@ -64,7 +69,11 @@ function ProductDetails() {
               )}
             </div>
           </div>
-          <div className="bg-amb flex flex-col  gap-5 pl-3 w-[500px]  h-[600px] ">
+               {/* Product Images End */}
+
+               {/* COMPLETE DETAILS Start */}
+
+          <div className=" flex flex-col  gap-6 pl-3 w-[500px]  h-[600px] ">
             <div>
               <h1 className="font-semibold text-2xl text-black">{product?.title}</h1>
             </div>
@@ -88,7 +97,7 @@ function ProductDetails() {
               <span className="text-gray-400" >|</span>
               <span className=" font-normal text-sm text-[#00FF66]"> Stock: {product?.stock}</span>
             </div>
-            <div className="price font-normal text-2xl">${discountPrice}</div>
+            <div className="price font-normal text-2xl">${discountPrice*count}</div>
             <div className="border-b-gray-400 border-b-2 pb-6">
               <p className=" font-normal text-sm text-black">
                 {product?.description}
@@ -96,14 +105,30 @@ function ProductDetails() {
             </div>
             <div className="minus-plus-btn-buy-btn-heart    flex gap-5 items-center">
             <div className=" countbtn w-[159px]  flex  border-2 rounded">
-              <button onClick={()=>setCount(count<2?1:count-1)} className="w-10 h-11 bg-white rounded  text-2xl">-</button><div  className="w-20 h-11  border-x-2 flex justify-center items-center "> {count}</div> <button onClick={()=>setCount(count<product?.minimumOrderQuantity?count+1:product?.minimumOrderQuantity)} className="w-10 h-11 bg-myTheme text-white rounded  text-2xl">+</button>
+              <button onClick={()=>setCount(count<2?1:count-1)} className="w-10 h-11 bg-white  active:bg-slate-200 rounded  text-2xl">-</button><div  className="w-20 h-11  border-x-2 flex justify-center items-center "> {count}</div> <button onClick={()=>setCount(count<product?.minimumOrderQuantity?count+1:product?.minimumOrderQuantity)} className="w-10 h-11 bg-myTheme active:bg-red-800 text-white rounded  text-2xl">+</button>
             </div>
-            <div><button className="w-[165px] h-11 bg-myTheme text-white rounded">Buy Now</button></div>
-            <div className="border-2 hover:bg-myTheme hover:text-white w-10 h-10 flex items-center justify-center rounded text-2xl"><GoHeart className="" /></div>
+            <div><button className="w-[165px] h-11 bg-myTheme text-white rounded active:bg-red-800">Buy Now</button></div>
+            <button className="border-2 active:bg-myTheme active:text-white w-10 h-10 flex items-center justify-center rounded text-2xl"><GoHeart className="" /></button>
             </div>
-          </div>
+<div className="delvery flex flex-col w-[399px] h-[180px]  justify-around  border-2 rounded">
+  <div className="flex pl-3 gap-4 border-b-2 pb-4">
+    <div className="w-10 h-10"><TbTruckDelivery  className="text-5xl"/></div>
+    <div className="">
+      <h1 className="font-medium text-base">Shipping Information</h1>
+      <p className="font-normal text-xs">{product?.shippingInformation}</p>
+    </div>
+  </div>
+  <div className="flex pl-3 gap-4">
+  <div><img className="w-10 h-10" src={IconReturn} alt="" /></div>
+    <div>
+      <h1 className="font-medium text-base">Return Policy</h1>
+      <p className="font-normal text-xs">{product?.returnPolicy}</p>
+    </div>
+  </div>
+</div>
+          </div> 
         </div>
-
+     {/* COMPLETE DETAILS End */}
         <div className="flex justify-center items-start my-3">
           {" "}
           <Link
