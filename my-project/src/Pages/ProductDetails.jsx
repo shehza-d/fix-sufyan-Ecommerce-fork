@@ -10,6 +10,8 @@ import CardListSlider from "../components/Slider";
 import { GoHeart } from "react-icons/go";
 import { TbTruckDelivery } from "react-icons/tb";
 import IconReturn from "../assets/details/Icon-return.png"
+import { IoShieldCheckmark } from "react-icons/io5";
+
 
 
 function ProductDetails() {
@@ -27,16 +29,13 @@ function ProductDetails() {
   const [count,setCount]= useState(1)
 
   return (
-    <>
-      Product Details {}
-      {params.id}
-      <div className="main flex flex-col justify-center  ">
-        <div className="flex justify-center items-start">
+    <><div className="main  my-16 flex flex-col justify-center h-min ">
+        <div className="flex justify-center my-5 items-start">
           <div className="w-full max-w-6xl  text-gray-400 text-sm mb-5">
             Home / <span className="text-gray-200">Card </span>
             <span className="text-black">
               {" "}
-              <span className="text-gray-400"> /</span> Havic HV G-92 Gamepad
+              <span className="text-gray-400"> /</span> {product?.category}
             </span>
           </div>
         </div>
@@ -45,11 +44,11 @@ function ProductDetails() {
                          {/* Product Images Start */}
 
           <div className="bg- flex  gap-6  md:w-[50%] h-auto">
-          {product?.images.length===1?null:  <div className="bg-red- w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
+          {product?.images.length===1?null:  <div className="bg-red-  w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
               {product?.images.map((image) => {
                 return (
                   <img
-                    className="w-[121px] h-[114px] cursor-pointer bg-[#F5F5F5]"
+                    className="w-[121px] h-[114px] shadow-2xl cursor-pointer bg-[#F5F5F5]"
                     src={image}
                     alt=""
                     onMouseOver={() => setSelectImg(image)}
@@ -57,7 +56,7 @@ function ProductDetails() {
                 );
               })}
             </div>}
-            <div className="flex justify-center   items-center bg-[#F5F5F5] w-[500px] h-[600px]">
+            <div className="flex justify-center  shadow-2xl  items-center bg-[#F5F5F5] w-[500px] h-[600px]">
               {selectImg ? (
                 <img src={selectImg} alt="" />
               ) : (
@@ -75,10 +74,10 @@ function ProductDetails() {
 
           <div className=" flex flex-col  gap-6 pl-3 w-[500px]  h-[600px] ">
             <div>
-              <h1 className="font-semibold text-2xl text-black">{product?.title}</h1>
+              <h1 className="font-semibold text-2xl text-black ">{product?.title}</h1>
             </div>
-            <div className="star-img w-[290px] h-[21px] flex items-center gap-3">
-              <span>
+            <div className="star-img  h-[21px] flex items-center gap-3">
+              <span >
                 {
                   <ReactStars
                     count={5}
@@ -107,7 +106,7 @@ function ProductDetails() {
             <div className=" countbtn w-[159px]  flex  border-2 rounded">
               <button onClick={()=>setCount(count<2?1:count-1)} className="w-10 h-11 bg-white  active:bg-slate-200 rounded  text-2xl">-</button><div  className="w-20 h-11  border-x-2 flex justify-center items-center "> {count}</div> <button onClick={()=>setCount(count<product?.minimumOrderQuantity?count+1:product?.minimumOrderQuantity)} className="w-10 h-11 bg-myTheme active:bg-red-800 text-white rounded  text-2xl">+</button>
             </div>
-            <div><button className="w-[165px] h-11 bg-myTheme text-white rounded active:bg-red-800">Buy Now</button></div>
+            <div><button className="w-[165px] h-11 bg-myTheme text-white rounded active:bg-red-800 ">Buy Now</button></div>
             <button className="border-2 active:bg-myTheme active:text-white w-10 h-10 flex items-center justify-center rounded text-2xl"><GoHeart className="" /></button>
             </div>
 <div className="delvery flex flex-col w-[399px] h-[180px]  justify-around  border-2 rounded">
@@ -125,7 +124,18 @@ function ProductDetails() {
       <p className="font-normal text-xs">{product?.returnPolicy}</p>
     </div>
   </div>
-</div>
+</div><div>
+    
+  </div>
+  <div className="flex justify-start items-center pl-3 gap-4 rounded border-2 w-[399px] h-[x] mb-2 p-1">
+  <div className="w-10 h-10">
+  <IoShieldCheckmark className="text-3xl" />
+
+  </div>
+    <div>
+      <p className="font-medium text-base">{product?.warrantyInformation}</p>
+    </div>
+  </div>
           </div> 
         </div>
      {/* COMPLETE DETAILS End */}
@@ -149,6 +159,7 @@ function ProductDetails() {
       <div className="flex">
 
       </div>
+    
     </>
   );
 }
