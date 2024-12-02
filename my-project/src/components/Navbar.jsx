@@ -66,21 +66,21 @@ export default function MyNavbar() {
             {Mylink.map((value, index) => {
               return (
                 <li
-                  className="hover:underline hover:text-myTheme hover:cursor-pointer"
+                  className="  hover:cursor-pointer"
                   key={index}
                 >
-                  <Link to={value.path}> {value.name}</Link>
+                  <Link className="link-underline link-underline-black link-underline:hover" to={value.path}> {value.name}</Link>
                 </li>
               );
             })}
 
             {logSing ? null : (
               <>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                  <Link to={"/SiginUp"}>SignUp</Link>
+                <li className=" hover:cursor-pointer">
+                  <Link className="link-underline link-underline-black link-underline:hover" to={"/SiginUp"}>SignUp</Link>
                 </li>
-                <li className="hover:underline hover:text-myTheme hover:cursor-pointer ">
-                  <Link to={"/Login"}>Login</Link>
+                <li className=" hover:cursor-pointer ">
+                  <Link className="link-underline link-underline-black link-underline:hover" to={"/Login"}>Login</Link>
                 </li>
               </>
             )}
@@ -122,10 +122,10 @@ export default function MyNavbar() {
               {Mylink.map((value, index) => {
                 return (
                   <li
-                    className="hover:underline hover:text-myTheme hover:cursor-pointer"
+                    className=" hover:cursor-pointer"
                     key={index}
                   >
-                    <Link
+                    <Link className="link-underline link-underline-black link-underline:hover"
                       onClick={() => {
                         setMenu(false);
                       }}
@@ -140,8 +140,8 @@ export default function MyNavbar() {
 
               {logSing === true ? (
                 <>
-                  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                    <Link to={"/SiginUp"}>SignUp</Link>
+                  <li className=" hover:cursor-pointer">
+                    <Link className="link-underline link-underline-black link-underline:hover" to={"/SiginUp"}>SignUp</Link>
                   </li>
                   {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <CiHeart />
@@ -156,8 +156,8 @@ export default function MyNavbar() {
                 </>
               ) : (
                 <>
-                  <li className="hover:underline hover:text-myTheme hover:cursor-pointer">
-                    <Link to={"/Login"}>Login</Link>
+                  <li className=" hover:cursor-pointer">
+                    <Link className="link-underline link-underline-black link-underline:hover" to={"/Login"}>Login</Link>
                   </li>
                   {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
                   <FaUserCircle />
