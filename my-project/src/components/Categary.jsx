@@ -1,8 +1,7 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-import { AddToCard } from './AddToCard';
+import { AddToCard } from "./AddToCard";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,37 +15,80 @@ import "swiper/css/scrollbar";
 // } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import {
+  A11y,
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+} from "swiper/modules";
+import { useParams } from "react-router-dom";
 
-function Categary({
-  category
-}) {
-    const [products, setProducts] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, SetError] = useState(null);
-    const API_KEY = `https://dummyjson.com/products/category/${category}`;
-  
-    let getProductData = async (event) => {
-      try {
-        setIsLoading(true);
-        SetError(null);
-        let response = await axios(API_KEY);
-        let data = response.data.products;
-        // console.log(data);
-        setIsLoading(false);
-        return setProducts(data);
-      } catch (error) {
-        setIsLoading(false);
-        SetError(error.response.statusText);
-        setProducts(null);
-        console.log(error.response.statusText);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    useEffect(() => {
-      getProductData();
-    }, []);
+function Categary({ category }) {
+
+ // Function 1
+//  const [products2, setProducts2] = useState(null);
+//  const params=useParams()
+//  const [isLoading2, setIsLoading2] = useState(false);
+//  const [error2, SetError2] = useState(null);
+//  const API_KEY2 = `https://dummyjson.com/products/${params.id}`
+
+//  let getProductData2 = async (event) => {
+//    try {
+//      setIsLoading2(true);
+//      SetError2(null);
+//      let response2 = await axios(API_KEY2);
+//      let data2 = response2.data.category;
+//      console.log( 'AS',data2);
+//      console.log(params.id);
+     
+     
+//      // console.log(data);
+//      setIsLoading2(false);
+//      return setProducts2(data2);
+//    } catch (error) {
+//      setIsLoading2(false);
+//      SetError2(error);
+//      setProducts2(null);
+//      console.log(error.response2.statusText);
+//    } finally {
+//      setIsLoading2(false);
+//    }
+//  };
+//  useEffect(() => {
+//    getProductData2();
+//  }, []);
+
+  // Function 2
+  const [products, setProducts] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, SetError] = useState(null);
+  const API_KEY = `https://dummyjson.com/products/category/${category}`;
+
+
+  let getProductData = async (event) => {
+    try {
+      setIsLoading(true);
+      SetError(null);
+      let response = await axios(API_KEY);
+      let data = response.data.products;
+      // console.log(data);
+      setIsLoading(false);
+      return setProducts(data);
+    } catch (error) {
+      setIsLoading(false);
+      SetError(error.response.statusText);
+      setProducts(null);
+      console.log(error.response.statusText);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  useEffect(() => {
+    getProductData();
+  }, []);
+ 
+
   return (
     // <div>Categary</div>
     <>
@@ -97,7 +139,7 @@ function Categary({
           onSlideChange={() => console.log("slide change")}
         >
           <div className="flex  justify-center items-center ">
-          {isLoading ? (
+            {isLoading ? (
               <div className="font-extrabold text-4xl">Loading...</div>
             ) : null}
             {error}
@@ -124,10 +166,8 @@ function Categary({
           </div>
         </Swiper>
       </div>
-    
-    
     </>
-  )
+  );
 }
 
-export default Categary
+export default Categary;

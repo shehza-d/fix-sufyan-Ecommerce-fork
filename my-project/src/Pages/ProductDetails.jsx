@@ -60,10 +60,10 @@ function ProductDetails() {
 
             <div className="bg- flex  gap-6  md:w-[50%] h-auto">
               {product?.images.length === 1 ? null : (
-                <div className="bg-red-  w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
+                <div  className="bg-red-  w-[170px] h-[600px] flex-col flex gap-3 justify-start items-center ">
                   {product?.images.map((image) => {
                     return (
-                      <img
+                      <img 
                         className="w-[121px] h-[114px] shadow-2xl cursor-pointer bg-[#F5F5F5]"
                         src={image}
                         alt=""
